@@ -701,3 +701,48 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
   .mc-marcador { font-size: 2.5rem; }
   .mc-equipo b { font-size: .95rem; }
 }
+
+/* ============ PORTADA CON MOVIMIENTO (Inicio) ============ */
+.portada { position: relative; overflow: hidden; background: #060806; border-bottom: 1px solid var(--borde); }
+.portada-pista { display: flex; transition: transform .6s cubic-bezier(.4, 0, .2, 1); }
+.slide { min-width: 100%; min-height: 420px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 3rem 4.5rem; gap: .9rem; }
+.slide .boton { margin-top: .5rem; }
+.slide-etq { color: var(--verde); font-size: .8rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; }
+.slide-meta { color: var(--texto-suave); }
+
+.slide-partido { background: radial-gradient(circle at 50% 0%, rgba(25, 194, 90, .22), transparent 65%), var(--gris); }
+.slide-partido.D .slide-etq { color: #ff8a8e; }
+.slide-partido.E .slide-etq { color: var(--amarillo); }
+.sp-linea { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.sp-eq { font-family: 'Oswald', sans-serif; font-size: clamp(1.3rem, 4vw, 2.2rem); text-transform: uppercase; letter-spacing: .03em; }
+.sp-goles { font-family: 'Oswald', sans-serif; font-size: clamp(3rem, 10vw, 5.5rem); color: var(--verde); line-height: 1; }
+.slide-partido.D .sp-goles { color: var(--rojo); }
+.slide-partido.E .sp-goles { color: var(--amarillo); }
+.slide-partido.prox .sp-goles { color: var(--texto-suave); }
+.sp-figura { display: inline-flex; align-items: center; gap: .6rem; background: var(--gris-claro); border: 1px solid var(--borde); border-radius: 999px; padding: .35rem 1rem .35rem .4rem; }
+.sp-figura img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--verde); }
+
+.slide-noticia { align-items: flex-start; text-align: left; justify-content: flex-end; }
+.slide-fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.slide-velo { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(6, 8, 6, .95) 10%, rgba(6, 8, 6, .35) 70%); }
+.slide-texto { position: relative; max-width: 760px; display: flex; flex-direction: column; gap: .7rem; align-items: flex-start; }
+.slide-texto h2 { font-size: clamp(1.7rem, 5vw, 3rem); }
+.slide-texto p { color: #d3ddd5; }
+
+.portada-flecha {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  width: 46px; height: 46px; border-radius: 50%; cursor: pointer; font-size: 1.5rem;
+  background: rgba(0, 0, 0, .5); color: #fff; border: 1px solid rgba(255, 255, 255, .25);
+}
+.portada-flecha:hover { background: var(--verde); color: #04120a; }
+.portada-flecha.ant { left: 1rem; }
+.portada-flecha.sig { right: 1rem; }
+.portada-puntos { position: absolute; bottom: 1rem; left: 0; right: 0; display: flex; justify-content: center; gap: .5rem; z-index: 2; }
+.portada-puntos button { width: 10px; height: 10px; padding: 0; border-radius: 999px; border: none; background: rgba(255, 255, 255, .35); cursor: pointer; transition: width .3s, background .3s; }
+.portada-puntos button.activo { width: 28px; background: var(--verde); }
+
+@media (max-width: 600px) {
+  .slide { padding: 2.5rem 1.2rem 3.5rem; min-height: 460px; }
+  .portada-flecha { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .portada-pista { transition: none; } }

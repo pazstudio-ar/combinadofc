@@ -75,6 +75,123 @@ function htmlNoticia(n) {
     </a>`;
 }
 
+/* ===== PORTADA CON MOVIMIENTO ===== */
+
+function slideUltimo(p, porId) {
+  if (!p) return '';
+  const r = resultadoDe(p);
+  const f = p.figura && porId[p.figura];
+  const etiqueta = { V: 'Victoria', E: 'Empate', D: 'Derrota' }[r];
+  return `
+    <article class="slide slide-partido ${r}">
+      <span class="slide-etq">Último partido · ${etiqueta}</span>
+      <div class="sp-linea">
+        <span class="sp-eq">Combinado FC</span>
+        <b class="sp-goles">${p.golesFavor} - ${p.golesContra}</b>
+        <span class="sp-eq">${esc(p.rival)}</span>
+      </div>
+      <p class="slide-meta">${fechaLarga(p.fecha)} · ${esc(p.torneo)}</p>
+      ${f ? `<p class="sp-figura"><img src="${esc(f.foto)}" alt="" onerror="this.remove()"> ⭐ Figura: <b>${esc(f.nombre)}</b></p>` : ''}
+      <a class="boton" href="${p.noticia ? 'noticia.html?id=' + encodeURIComponent(p.noticia) : 'partidos.html'}">
+        ${p.noticia ? 'Leer la crónica' : 'Ver todos los partidos'}</a>
+    </article>`;
+}
+
+function slideProximo(p) {
+  if (!p) return '';
+  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  const esHoy = parsearFecha(p.fecha).getTime() === hoy.getTime();
+  const partes = [fechaLarga(p.fecha)];
+  if (p.hora) partes.push(`${esc(p.hora)} hs`);
+  if (p.lugar) partes.push(`📍 ${esc(p.lugar)}`);
+  return `
+    <article class="slide slide-partido prox">
+      <span class="slide-etq">${esHoy ? '¡Hoy juega Combinado!' : 'Próximo partido'}</span>
+      <div class="sp-linea">
+        <span class="sp-eq">Combinado FC</span>
+        <b class="sp-goles">VS</b>
+        <span class="sp-eq">${esc(p.rival)}</span>
+      </div>
+      <p class="slide-meta">${partes.join(' · ')}</p>
+      <p class="slide-meta">${esc(p.torneo)}</p>
+      <a class="boton" href="partidos.html">Ver partidos</a>
+    </article>`;
+}
+
+function slideNoticia(n) {
+  if (!n) return '';
+  return `
+    <article class="slide slide-noticia">
+      <img class="slide-fondo" src="${esc(n.imagen)}" alt="" onerror="this.remove()">
+      <div class="slide-velo"></div>
+      <div class="slide-texto">
+        <span class="slide-etq">${esc(n.categoria)} · ${fechaCorta(n.fecha)}</span>
+        <h2>${esc(n.titulo)}</h2>
+        <p>${esc(n.resumen)}</p>
+        <a class="boton" href="noticia.html?id=${encodeURIComponent(n.id)}">Leer más</a>
+      </div>
+    </article>`;
+}
+
+function iniciarPortada(slides) {
+  const lista = slides.filter(Boolean);
+  const cont = document.getElementById('portada');
+  if (!cont || !lista.length) return;
+
+  const pista = document.getElementById('portada-pista');
+  const puntos = document.getElementById('portada-puntos');
+  pista.innerHTML = lista.join('');
+  puntos.innerHTML = lista.map((_, i) => `<button aria-label="Ir a la diapositiva ${i + 1}" data-i="${i}"></button>`).join('');
+  cont.hidden = false;
+
+  let actual = 0, timer = null;
+  const total = lista.length;
+
+  function ir(i) {
+    actual = (i + total) % total;
+    pista.style.transform = `translateX(-${actual * 100}%)`;
+    [...pista.children].forEach((s, k) => s.setAttribute('aria-hidden', k === actual ? 'false' : 'true'));
+    [...puntos.children].forEach((b, k) => b.classList.toggle('activo', k === actual));
+  }
+  function iniciarAuto() {
+    detener();
+    if (total < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = setInterval(() => ir(actual + 1), 6000);
+  }
+  function detener() { clearInterval(timer); timer = null; }
+
+  if (total < 2) {
+    document.getElementById('portada-ant').hidden = true;
+    document.getElementById('portada-sig').hidden = true;
+    puntos.hidden = true;
+  }
+
+  document.getElementById('portada-ant').addEventListener('click', () => { ir(actual - 1); iniciarAuto(); });
+  document.getElementById('portada-sig').addEventListener('click', () => { ir(actual + 1); iniciarAuto(); });
+  puntos.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) { ir(Number(b.dataset.i)); iniciarAuto(); }
+  });
+
+  // Pausa al pasar el mouse o enfocar con teclado
+  cont.addEventListener('mouseenter', detener);
+  cont.addEventListener('mouseleave', iniciarAuto);
+  cont.addEventListener('focusin', detener);
+  cont.addEventListener('focusout', iniciarAuto);
+
+  // Deslizar con el dedo
+  let x0 = 0;
+  cont.addEventListener('touchstart', e => { x0 = e.changedTouches[0].clientX; detener(); }, { passive: true });
+  cont.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) ir(actual + (dx < 0 ? 1 : -1));
+    iniciarAuto();
+  }, { passive: true });
+
+  ir(0);
+  iniciarAuto();
+}
+
 async function iniciarInicio() {
   try {
     const [partidos, jugadores, noticias] = await Promise.all([
@@ -105,6 +222,10 @@ async function iniciarInicio() {
     const ultimas = [...noticias]
       .sort((a, b) => parsearFecha(b.fecha) - parsearFecha(a.fecha))
       .slice(0, 3);
+
+    // Portada con movimiento: último partido, noticia, próximo partido, otra noticia
+    const porId = {}; jugadores.forEach(x => { porId[x.id] = x; });
+    iniciarPortada([slideUltimo(ultimo, porId), slideNoticia(ultimas[0]), slideProximo(proximo), slideNoticia(ultimas[1])]);
     document.getElementById('noticias').innerHTML = ultimas.map(htmlNoticia).join('');
 
   } catch (e) {

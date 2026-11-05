@@ -6,6 +6,7 @@
   "lugar": "Cancha 1",
   "torneo": "Copa Chamigo 2026",
   "estado": "jugado",
+  "noticia": "cronica-combinado-borbotones",
   "golesFavor": 4,
   "golesContra": 4,
   "jugaron": ["alan", "diego", "dario", "esteban", "richard","mati","eduardo","kevin"],

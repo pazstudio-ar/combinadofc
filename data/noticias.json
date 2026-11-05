@@ -14,6 +14,21 @@
     "pie": "El 10 en acción, con toda la presencia que lo caracteriza"
   },
   {
+    "id": "cronica-combinado-borbotones",
+    "titulo": "Partido de ida y vuelta: Combinado empató 4 a 4 con The borbotones",
+    "fecha": "2026-10-08",
+    "categoria": "Crónica",
+    "imagen": "img/jugadores/kevin.png",
+    "resumen": "Por la Copa Chamigo, el verde y negro igualó con doblete de Alan Paz y Kevin Lopez como figura.",
+    "contenido": [
+      "Combinado FC y The borbotones igualaron 4 a 4 el jueves 8 de octubre, por la Copa Chamigo 2026, en la Cancha 1. Un partido de ida y vuelta, con goles para los dos lados y poco lugar para el respiro.",
+      "Alan Paz fue el más punzante del verde y negro, con dos goles. Ricardo Farias y Esteban Jimenez completaron la cuenta, y Kevin Lopez dio una asistencia y fue elegido figura del partido.",
+      "Diego Sequeira defendió el arco, y el equipo se presentó con el plantel completo: Alan, Darío, Esteban, Ricardo, Matías, Eduardo, Kevin y el propio Diego.",
+      "Con el empate, Combinado sumó un punto en la tabla de la Copa Chamigo."
+    ],
+    "pie": "Kevin Lopez, figura del partido"
+  },
+  {
     "id": "solidez-paciencia-y-destrabe",
     "titulo": "Solidez, paciencia y destrabe sobre el final",
     "fecha": "2025-09-29",
