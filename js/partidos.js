@@ -4,6 +4,8 @@ let todos = [];
 let posiciones = [];
 let torneoActual = 'todos';
 let nombres = {};
+let fotos = {};
+let escudos = {};
 
 function textoGoleadores(p) {
   if (p.goles && Object.keys(p.goles).length) {
@@ -38,30 +40,58 @@ function partidosFiltrados() {
 
 /* ----- Piezas ----- */
 
+// Escudo del equipo: usa data/equipos.json si existe, y si no, un círculo con las iniciales
+function escudoEquipo(nombre) {
+  const e = escudos[clave(nombre)];
+  if (e) {
+    return `<img class="mc-escudo" src="${esc(e)}" alt="Escudo ${esc(nombre)}" loading="lazy"
+                 onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'mc-escudo mc-iniciales',textContent:'${esc(iniciales(nombre))}'}))">`;
+  }
+  return `<span class="mc-escudo mc-iniciales" aria-hidden="true">${esc(iniciales(nombre))}</span>`;
+}
+
+function iniciales(nombre) {
+  const pal = String(nombre).replace(/\bfc\b/ig, '').trim().split(/\s+/).filter(Boolean);
+  return (pal.length > 1 ? pal[0][0] + pal[1][0] : String(nombre).slice(0, 2)).toUpperCase();
+}
+
 function filaPartido(p, mostrarTorneo) {
   const jugado = p.estado === 'jugado';
   const r = jugado ? resultadoDe(p) : null;
+  const etiqueta = { V: 'Victoria', E: 'Empate', D: 'Derrota' }[r] || 'Próximo';
 
-  const subFecha = !jugado && p.hora ? `<small>${esc(p.hora)} hs</small>` : '';
-  const subRival = mostrarTorneo ? `<small>${esc(nombreTorneo(p))}</small>` : '';
+  const fechaTxt = fechaLarga(p.fecha) + (p.hora ? ` · ${esc(p.hora)} hs` : '');
+  const cab = [esc(nombreTorneo(p)), p.lugar ? '📍 ' + esc(p.lugar) : '']
+    .filter(Boolean).join(' · ');
 
-  const marcador = jugado
-    ? `<div class="fp-goles">${p.golesFavor} - ${p.golesContra}
-         ${p.penales ? `<small>Penales ${esc(p.penales)}</small>` : ''}</div>
-       <span class="badge ${r}">${r}</span>`
-    : `<span class="fp-vs">VS</span>`;
+  const centro = jugado
+    ? `<div class="mc-marcador">${p.golesFavor}<span>-</span>${p.golesContra}</div>
+       ${p.penales ? `<small class="mc-pen">Penales ${esc(p.penales)}</small>` : ''}`
+    : `<div class="mc-vs">VS</div>`;
 
-  const extras = [];
-    const textoGol = textoGoleadores(p);
-  if (jugado && textoGol) extras.push(`<span>⚽ ${esc(textoGol)}</span>`);
-  if (p.noticia) extras.push(`<a href="noticia.html?id=${encodeURIComponent(p.noticia)}">Leer la crónica →</a>`);
+  const pie = [];
+  const textoGol = textoGoleadores(p);
+  if (jugado && p.figura) {
+    const foto = fotos[p.figura];
+    pie.push(`<span class="mc-figura">${foto ? `<img src="${esc(foto)}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+      ⭐ Figura: <b>${esc(nombres[p.figura] || p.figura)}</b></span>`);
+  }
+  if (jugado && textoGol) pie.push(`<span>⚽ ${esc(textoGol)}</span>`);
+  if (p.noticia) pie.push(`<a href="noticia.html?id=${encodeURIComponent(p.noticia)}">Leer la crónica →</a>`);
 
   return `
-    <article class="fila-partido">
-      <div class="fp-fecha">${fechaCorta(p.fecha)}${subFecha}</div>
-      <div class="fp-rival"><b>Combinado FC</b><span class="vs">vs</span><b>${esc(p.rival)}</b>${subRival}</div>
-      <div class="fp-res">${marcador}</div>
-      ${extras.length ? `<div class="fp-extra">${extras.join('')}</div>` : ''}
+    <article class="match-card ${r || 'prox'}">
+      <header class="mc-cab">
+        <span class="mc-torneo">${cab}</span>
+        <span class="mc-estado">${etiqueta}</span>
+      </header>
+      <div class="mc-cuerpo">
+        <div class="mc-equipo"><img class="mc-escudo" src="img/logo/escudo.png" alt="Escudo Combinado FC"><b>Combinado FC</b></div>
+        <div class="mc-centro">${centro}</div>
+        <div class="mc-equipo">${escudoEquipo(p.rival)}<b>${esc(p.rival)}</b></div>
+      </div>
+      <p class="mc-fecha">${fechaTxt}</p>
+      ${pie.length ? `<footer class="mc-pie">${pie.join('')}</footer>` : ''}
     </article>`;
 }
 
@@ -143,13 +173,15 @@ function dibujar() {
 
 async function iniciarPartidos() {
   try {
-        let jugs;
-    [todos, posiciones, jugs] = await Promise.all([
+        let jugs, eqs;
+    [todos, posiciones, jugs, eqs] = await Promise.all([
       cargarJSON('data/partidos.json'),
       cargarJSON('data/posiciones.json').catch(() => []),
-      cargarJSON('data/jugadores.json').catch(() => [])
+      cargarJSON('data/jugadores.json').catch(() => []),
+      cargarJSON('data/equipos.json').catch(() => [])
     ]);
-    jugs.forEach(j => { nombres[j.id] = j.nombre; });
+    jugs.forEach(j => { nombres[j.id] = j.nombre; fotos[j.id] = j.foto; });
+    eqs.forEach(e => { if (e.nombre && e.escudo) escudos[clave(e.nombre)] = e.escudo; });
   } catch (e) {
     console.error(e);
     document.getElementById('lista-resultados').innerHTML =

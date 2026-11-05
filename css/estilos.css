@@ -648,3 +648,56 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
   .nav { gap: 1rem; }
   .nav a { font-size: .78rem; }
 }
+/* ============ TARJETAS DE PARTIDO (página Partidos) ============ */
+.lista-partidos { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 1.2rem; }
+.match-card {
+  background: var(--gris); border: 1px solid var(--borde); border-top: 4px solid var(--borde);
+  border-radius: var(--radio); padding: 1.2rem 1.4rem 1rem; display: flex; flex-direction: column; gap: .9rem;
+  transition: transform .25s, border-color .25s;
+}
+.match-card:hover { transform: translateY(-4px); }
+.match-card.V { border-top-color: var(--verde); }
+.match-card.E { border-top-color: var(--amarillo); }
+.match-card.D { border-top-color: var(--rojo); }
+.match-card.prox { border-top-color: var(--texto-suave); background: linear-gradient(180deg, rgba(25, 194, 90, .08), var(--gris)); }
+.mc-cab { display: flex; justify-content: space-between; align-items: center; gap: .8rem; font-size: .78rem; color: var(--texto-suave); }
+.mc-torneo { font-weight: 600; letter-spacing: .04em; }
+.mc-estado {
+  flex-shrink: 0; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  padding: .25rem .7rem; border-radius: 999px; background: var(--gris-claro); color: var(--texto);
+}
+.match-card.V .mc-estado { background: rgba(25, 194, 90, .18); color: var(--verde); }
+.match-card.E .mc-estado { background: rgba(245, 183, 59, .18); color: var(--amarillo); }
+.match-card.D .mc-estado { background: rgba(229, 72, 77, .18); color: #ff8a8e; }
+
+.mc-cuerpo { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .8rem; }
+.mc-equipo { display: flex; flex-direction: column; align-items: center; gap: .5rem; text-align: center; min-width: 0; }
+.mc-equipo b { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: .03em; font-size: 1.05rem; line-height: 1.15; overflow-wrap: anywhere; }
+.mc-escudo { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
+.mc-iniciales {
+  display: grid; place-items: center; border-radius: 50%; background: var(--gris-claro);
+  border: 2px solid var(--borde); font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--texto-suave);
+}
+.mc-centro { text-align: center; }
+.mc-marcador { font-family: 'Oswald', sans-serif; font-size: 3.2rem; font-weight: 700; line-height: 1; white-space: nowrap; }
+.mc-marcador span { color: var(--texto-suave); padding: 0 .35rem; font-weight: 400; }
+.match-card.V .mc-marcador { color: var(--verde); }
+.mc-vs { font-family: 'Oswald', sans-serif; font-size: 1.8rem; color: var(--verde); letter-spacing: .1em; }
+.mc-pen { display: block; color: var(--texto-suave); font-size: .75rem; margin-top: .3rem; }
+.mc-fecha { text-align: center; color: var(--texto-suave); font-size: .85rem; }
+
+.mc-pie {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem;
+  border-top: 1px dashed var(--borde); padding-top: .8rem; font-size: .85rem; color: var(--texto-suave);
+}
+.mc-pie a { color: var(--verde); font-weight: 600; margin-left: auto; }
+.mc-pie a:hover { text-decoration: underline; }
+.mc-figura { display: inline-flex; align-items: center; gap: .45rem; color: var(--texto); }
+.mc-figura img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--verde); }
+
+@media (max-width: 520px) {
+  .lista-partidos { grid-template-columns: 1fr; }
+  .mc-escudo { width: 50px; height: 50px; }
+  .mc-marcador { font-size: 2.5rem; }
+  .mc-equipo b { font-size: .95rem; }
+}
