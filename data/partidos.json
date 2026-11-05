@@ -65,5 +65,12 @@
   "asistencias": { "alan": 1 },
   "figura": "mati",
   "arquero": "diego"
+  },
+  {
+  "fecha": "2026-11-05",
+  "hora": "20:50",
+  "rival": "Team Fortu FC",
+  "torneo": "Copa Chamigo 2026",
+  "estado": "proximo"
   }
 ]

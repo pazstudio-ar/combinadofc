@@ -1,5 +1,19 @@
 [
   {
+    "id": "el-10-esta-cada-vez-mas-pesado",
+    "titulo": "El 10 está cada vez más pesado: ya lo apodan \"el 100\"",
+    "fecha": "2026-11-05",
+    "categoria": "Humor",
+    "imagen": "img/noticias/el-100.jpg",
+    "resumen": "Preocupación en el vestuario: el equipo analiza tomar medidas, al estilo del pesaje de Gago, nuestro querido DT.",
+    "contenido": [
+      "En Combinado hay un tema que ya no se puede esconder debajo de la camiseta: el 10 está cada vez más pesado. Tanto, que en el plantel empezaron a apodarlo \"el 100\".",
+      "Ante la situación, el equipo empezó a evaluar tomar medidas. Sobre la mesa aparece una idea inspirada en el pesaje de Gago, nuestro querido DT.",
+      "Por ahora no hay fecha confirmada para la balanza oficial. Seguiremos informando."
+    ],
+    "pie": "El 10 en acción, con toda la presencia que lo caracteriza"
+  },
+  {
     "id": "solidez-paciencia-y-destrabe",
     "titulo": "Solidez, paciencia y destrabe sobre el final",
     "fecha": "2025-09-29",
