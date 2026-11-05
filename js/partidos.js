@@ -94,8 +94,11 @@ function dibujarTabla() {
 
   const filas = data.equipos.map(e => {
     const pg = e.pg || 0, pe = e.pe || 0, pp = e.pp || 0;
+    // Si cargás gf y gc, la diferencia se calcula sola. Si solo tenés la diferencia, usá "dg".
+    const sinGoles = e.gf === undefined && e.gc === undefined && e.dg !== undefined;
     const gf = e.gf || 0, gc = e.gc || 0;
-    return { nombre: e.equipo, pj: pg + pe + pp, pg, pe, pp, gf, gc, dg: gf - gc, pts: pg * 3 + pe };
+    const dg = sinGoles ? Number(e.dg) || 0 : gf - gc;
+    return { nombre: e.equipo, pj: pg + pe + pp, pg, pe, pp, gf, gc, dg, sinGoles, pts: pg * 3 + pe };
   }).sort((a, b) => b.pts - a.pts || b.dg - a.dg || b.gf - a.gf);
 
   document.getElementById('cuerpo-tabla').innerHTML = filas.map((f, i) => `
@@ -103,7 +106,7 @@ function dibujarTabla() {
       <td>${i + 1}</td>
       <td class="izq eq">${esc(f.nombre)}</td>
       <td>${f.pj}</td><td>${f.pg}</td><td>${f.pe}</td><td>${f.pp}</td>
-      <td>${f.gf}</td><td>${f.gc}</td><td>${f.dg > 0 ? '+' : ''}${f.dg}</td>
+      <td>${f.sinGoles ? '–' : f.gf}</td><td>${f.sinGoles ? '–' : f.gc}</td><td>${f.dg > 0 ? '+' : ''}${f.dg}</td>
       <td class="pts">${f.pts}</td>
     </tr>`).join('');
   bloque.hidden = false;
