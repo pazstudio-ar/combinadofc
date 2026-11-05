@@ -54,9 +54,14 @@
   {
   "fecha": "2026-10-15",
   "hora": "20:00",
-  "rival": "Los Perros",
+  "rival": "Zabaleta",
   "lugar": "Cancha 1",
   "torneo": "Copa Chamigo 2026",
-  "estado": "proximo"
+  "estado": "jugado",
+  "golesFavor": 5,
+  "golesContra": 8,
+  "goles": { "mati": 3, "esteban": 1, "richard": 1 },
+  "asistencias": { "alan": 1 },
+  "figura": "mati"
   }
 ]
