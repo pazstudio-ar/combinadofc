@@ -34,7 +34,7 @@ function tarjetaUltimo(p) {
     <article class="partido-card">
       <span class="etiqueta">Último resultado</span>
       <h3>Combinado FC <span class="vs">vs</span> ${esc(p.rival)}</h3>
-      <div class="marcador">${p.golesFavor} - ${p.golesContra}
+      <div class="marcador ${resultadoDe(p)}">${p.golesFavor} - ${p.golesContra}
         <span class="badge ${resultadoDe(p)}">${resultadoDe(p)}</span>${pen}
       </div>
       <p class="meta">${fechaLarga(p.fecha)}</p>

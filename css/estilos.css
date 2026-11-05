@@ -746,3 +746,21 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
   .portada-flecha { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .portada-pista { transition: none; } }
+
+/* ============ AJUSTES DEL INICIO ============ */
+/* Portada más compacta: así el banner de novedades se ve apenas se entra */
+.hero { min-height: 0; padding: 2.5rem 0 3rem; }
+.hero img { width: clamp(84px, 12vw, 110px); margin-bottom: 1rem; }
+.hero h1 { font-size: clamp(2.4rem, 8vw, 4.6rem); margin: .3rem 0; }
+.hero p.sub { font-size: 1rem; }
+.hero-botones { margin-top: 1.4rem; }
+
+/* El color del marcador depende del resultado (antes siempre era verde) */
+.marcador.D { color: var(--rojo); }
+.marcador.E { color: var(--amarillo); }
+.partido-card { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+@media (max-width: 600px) {
+  /* En el celular: equipo / marcador / equipo, uno debajo del otro */
+  .sp-linea { flex-direction: column; gap: .2rem; }
+}
