@@ -60,8 +60,10 @@
   "estado": "jugado",
   "golesFavor": 5,
   "golesContra": 8,
+  "jugaron": ["mati", "eduardo", "alan", "dario", "richard", "esteban", "diego"],
   "goles": { "mati": 3, "esteban": 1, "richard": 1 },
   "asistencias": { "alan": 1 },
-  "figura": "mati"
+  "figura": "mati",
+  "arquero": "diego"
   }
 ]
