@@ -771,7 +771,6 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
   .tabla-pos th { padding: .7rem .25rem; font-size: .62rem; letter-spacing: .04em; }
   .tabla-pos td { padding: .65rem .25rem; font-size: .85rem; }
   .tabla-pos td.pts { font-size: 1.05rem; }
-  .tabla-pos .col-gol { display: none; }          /* GF y GC se ven en la compu */
   .tabla-pos th:first-child, .tabla-pos td:first-child { width: 1.8rem; padding-left: .6rem; }
   .tabla-pos th.izq, .tabla-pos td.izq { padding-left: .3rem; }
   .tabla-pos td.eq { line-height: 1.2; overflow-wrap: anywhere; }  /* los nombres largos bajan de renglón */
