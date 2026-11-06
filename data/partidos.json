@@ -72,6 +72,11 @@
   "hora": "20:50",
   "rival": "Team Fortu FC",
   "torneo": "Copa Chamigo 2026",
-  "estado": "proximo"
+  "estado": "jugado",
+  "noticia": "cronica-combinado-team-fortu",
+  "golesFavor": 2,
+  "golesContra": 1,
+  "jugaron": ["diego", "alan", "mati"],
+  "goles": { "diego": 1, "alan": 1 }
   }
 ]
