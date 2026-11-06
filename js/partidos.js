@@ -136,7 +136,7 @@ function dibujarTabla() {
       <td>${i + 1}</td>
       <td class="izq eq">${esc(f.nombre)}</td>
       <td>${f.pj}</td><td>${f.pg}</td><td>${f.pe}</td><td>${f.pp}</td>
-      <td>${f.sinGoles ? '–' : f.gf}</td><td>${f.sinGoles ? '–' : f.gc}</td><td>${f.dg > 0 ? '+' : ''}${f.dg}</td>
+      <td class="col-gol">${f.sinGoles ? '–' : f.gf}</td><td class="col-gol">${f.sinGoles ? '–' : f.gc}</td><td>${f.dg > 0 ? '+' : ''}${f.dg}</td>
       <td class="pts">${f.pts}</td>
     </tr>`).join('');
   bloque.hidden = false;
