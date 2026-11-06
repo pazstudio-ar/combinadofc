@@ -76,7 +76,7 @@
   "noticia": "cronica-combinado-team-fortu",
   "golesFavor": 2,
   "golesContra": 1,
-  "jugaron": ["diego", "alan", "mati"],
+  "jugaron": ["diego", "alan", "mati", "franco"],
   "goles": { "diego": 1, "alan": 1 }
   }
 ]

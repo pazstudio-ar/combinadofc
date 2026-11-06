@@ -105,7 +105,14 @@
   "partidos": 2,
   "goles": 2,
   "asistencias": 2,
-  "bio": "Delantero, se asocia bien con el equipo, tiempiesta y gambeteador" }
+  "bio": "Delantero, se asocia bien con el equipo, tiempiesta y gambeteador" },
+
+  {
+  "id": "franco",
+  "nombre": "Franco Farias",
+  "posiciones": ["Arquero"],
+  "foto": "img/jugadores/franco.png"
+  }
 
   
 ]
