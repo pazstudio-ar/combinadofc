@@ -81,6 +81,7 @@ function abrirFicha(id) {
         <h2>${esc(j.nombre)}</h2>
         <p class="ficha-pos">${esc(textoPosiciones(j))}</p>
         ${j.apodo ? `<p class="ficha-apodo">"${esc(j.apodo)}"</p>` : ''}
+        ${j.lema ? `<p class="ficha-lema">Lema: <b>${esc(j.lema)}</b></p>` : ''}
         ${bloque}
         ${j.bio ? `<p class="ficha-bio">${esc(j.bio)}</p>` : ''}
         <div class="ficha-compartir">

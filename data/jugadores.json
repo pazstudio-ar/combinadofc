@@ -112,6 +112,17 @@
   "nombre": "Franco Farias",
   "posiciones": ["Arquero"],
   "foto": "img/jugadores/franco.png"
+  },
+
+  {
+  "id": "julian",
+  "nombre": "Julian Quintanilla",
+  "posiciones": ["Arquero"],
+  "numero": 6,
+  "foto": "img/jugadores/julian.png",
+  "apodo": "La Pesadilla / Tenazas",
+  "lema": "Ganar, ganar, ganar",
+  "bio": "Arquero con buena pegada, velocidad y fuerza."
   }
 
   

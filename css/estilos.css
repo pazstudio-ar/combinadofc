@@ -776,3 +776,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
   .tabla-pos td.eq { line-height: 1.2; overflow-wrap: anywhere; }  /* los nombres largos bajan de renglón */
   .tabla-pos th:last-child, .tabla-pos td:last-child { padding-right: .7rem; }
 }
+
+/* Lema del jugador en la ficha */
+.ficha-lema { margin-top: .5rem; color: var(--texto-suave); font-size: .9rem; }
+.ficha-lema b { color: var(--texto); font-style: italic; font-weight: 600; }
