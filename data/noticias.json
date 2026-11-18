@@ -1,5 +1,23 @@
 [
   {
+    "id": "cronica-combinado-el-rejunte",
+    "titulo": "Dura derrota, pero con la cabeza en alto: Combinado cayó 2 a 1 ante El Rejunte FC",
+    "fecha": "2026-11-12",
+    "categoria": "Crónica",
+    "imagen": "img/jugadores/mati.png",
+    "resumen": "En un encuentro muy luchado por la Copa Chamigo, Matías Sorini descontó en el cierre, pero el verde y negro no pudo llegar al empate.",
+    "contenido": [
+      "Combinado FC disputó una nueva fecha de la Copa Chamigo frente a El Rejunte FC y, tras un encuentro muy luchado, terminó cayendo por 2 a 1.",
+      "El arranque fue todo nuestro: Combinado manejaba los tiempos, tenía la posesión de la pelota y jugaba mejor en esos primeros minutos. Sin embargo, en una jugada de pelota parada, el rival aprovechó un tiro libre para abrir el marcador y ponerse 1 a 0 arriba.",
+      "Ese gol nos generó algo de nerviosismo y ansiedad a la hora de administrar el balón, mientras que el rival se fue haciendo cada vez más fuerte y sólido en defensa. Aun así, nos fuimos al descanso abajo por la mínima y completamente en partido.",
+      "En el complemento salimos a buscarlo y tuvimos ocasiones claras para llegar al empate, pero no logramos concretar. En uno de sus avances, El Rejunte FC estiró la ventaja poniendo el 2 a 0. Lejos de rendirse, el equipo siguió empujando hasta el final.",
+      "El descuento llegó de la mano de nuestro goleador, Matías Sorini, que dijo presente en la red para devolvernos la ilusión en el cierre. Resultado final: Combinado FC 1 - 2 El Rejunte FC.",
+      "Es una derrota que duele porque sabemos que el resultado no refleja todo lo que este equipo puede dar dentro de la cancha. Pero de estos partidos se aprende: toca masticar la bronca, corregir detalles y levantar rápido la cabeza.",
+      "Se vienen fechas durísimas y vamos a dejar todo para pelear lo más arriba posible en la tabla. ¡Vamos Combinado, siempre juntos!"
+    ],
+    "pie": "Matías Sorini, figura del partido y autor del gol"
+  },
+  {
     "id": "cronica-combinado-team-fortu",
     "titulo": "Combinado volvió al triunfo: 2 a 1 ante Team Fortu FC en un partido muy reñido",
     "fecha": "2026-11-05",

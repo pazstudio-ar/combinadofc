@@ -85,6 +85,21 @@
   "hora": "20:00",
   "rival": "El Rejunte FC",
   "torneo": "Copa Chamigo 2026",
+  "estado": "jugado",
+  "noticia": "cronica-combinado-el-rejunte",
+  "golesFavor": 1,
+  "golesContra": 2,
+  "jugaron": ["alan", "julian", "eduardo", "mati", "esteban", "dario", "kevin", "richard"],
+  "goles": { "mati": 1 },
+  "asistencias": { "esteban": 1 },
+  "figura": "mati"
+  },
+  {
+  "fecha": "2026-11-19",
+  "hora": "21:20",
+  "rival": "Los pibes de la barber",
+  "lugar": "Cancha 1",
+  "torneo": "Copa Chamigo 2026",
   "estado": "proximo"
   }
 ]
