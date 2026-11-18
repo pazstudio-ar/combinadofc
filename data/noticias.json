@@ -1,5 +1,23 @@
 [
   {
+    "id": "hay-cantera-herederos-rabino-senor-malicia",
+    "titulo": "¡Hay cantera en el Combinado FC! Nacieron los herederos del Rabino y del Señor Malicia",
+    "fecha": "2026-11-18",
+    "categoria": "Humor",
+    "imagen": "img/noticias/cantera-bodis.jpg",
+    "resumen": "Nacieron el hijo de Diego (el Rabino) y el hijo de Santi (el Señor Malicia). El semillero ya tiene dos bodis: uno con la 9 y otro con la 20.",
+    "contenido": [
+      "El mundo del deporte barrial y la diplomacia de vestuario están revolucionados. En las últimas horas se confirmó la llegada al mundo de los nuevos refuerzos de la institución: nacieron el hijo de Diego (el querido y goleador «Rabino») y el hijo de Santi (más conocido en las canchas y en los tribunales del buen fútbol como el temible «Señor Malicia»).",
+      "Con estos dos esperados nacimientos, el futuro institucional y futbolístico de nuestro amado club quedó oficialmente en buenas manos... o, mejor dicho, en buenos botines.",
+      "La pregunta que ya se hacen todos los hinchas en la tribuna y los organizadores del tercer tiempo es inevitable: ¿heredarán la sabiduría táctica y la potencia del Rabino Diego, o saldrán con la picardía, la maña y la gambeta filosa del señor Malicia Santi? Lo ideal, por el bien del espectáculo, sería una fusión exacta de ambos: un jugador que te hable de paz y amor mientras te tira un caño en el minuto 90 sin que te des cuenta.",
+      "Desde este medio nos sumamos a las felicitaciones para los flamantes padres. Sabemos que cambiar pañales a las 3 de la mañana es mucho más duro que marcar a un delantero rápido en un domingo de calor, pero la patria futbolera lo demanda.",
+      "Ojalá que estos dos pequeños cracks jueguen al fútbol al menos la mitad de bien que lo intentan sus padres (porque si jugaran igual, estaríamos hablando de la próxima final de la Champions League amateur).",
+      "¡Felicidades, Diego y Santi! Que crezcan sanos, felices y con el escudo del Combinado FC bien grabado en el pecho... ¡y que vayan preparando los dos bodis con la 9 y la 20 para armar el semillero!"
+    ],
+    "autor": "Redacción deportiva de Combinado FC",
+    "pie": "Los dos bodis, con la 9 y la 20, listos para el semillero"
+  },
+  {
     "id": "cronica-combinado-el-rejunte",
     "titulo": "Dura derrota, pero con la cabeza en alto: Combinado cayó 2 a 1 ante El Rejunte FC",
     "fecha": "2026-11-12",
