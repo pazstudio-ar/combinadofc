@@ -2,16 +2,16 @@
   {
     "torneo": "Copa Chamigo 2026",
     "equipos": [
-      { "equipo": "Los Perros",             "pg": 4, "pe": 1, "pp": 0, "dg": 12 },
-      { "equipo": "Los pibes de la barber", "pg": 4, "pe": 0, "pp": 1, "dg": 17 },
-      { "equipo": "Royal FC",               "pg": 3, "pe": 2, "pp": 1, "dg": 1 },
-      { "equipo": "El Rejunte FC",          "pg": 3, "pe": 0, "pp": 2, "dg": 3 },
-      { "equipo": "Combinado FC",           "pg": 2, "pe": 1, "pp": 2, "dg": 3 },
-      { "equipo": "Los 14 FC",              "pg": 2, "pe": 1, "pp": 2, "dg": 2 },
-      { "equipo": "Pingüinos",              "pg": 2, "pe": 0, "pp": 3, "dg": -1 },
-      { "equipo": "Mecánic",                "pg": 1, "pe": 1, "pp": 2, "dg": -6 },
-      { "equipo": "Norteñas",               "pg": 1, "pe": 0, "pp": 5, "dg": -19 },
-      { "equipo": "Los de siempre",         "pg": 0, "pe": 0, "pp": 4, "dg": -12 }
+      { "equipo": "Los Perros",             "pg": 5, "pe": 1, "pp": 0, "dg": 17 },
+      { "equipo": "Royal FC",               "pg": 4, "pe": 2, "pp": 1, "dg": 6 },
+      { "equipo": "Los pibes de la barber", "pg": 4, "pe": 0, "pp": 2, "dg": 15 },
+      { "equipo": "El Rejunte FC",          "pg": 4, "pe": 0, "pp": 2, "dg": 4 },
+      { "equipo": "Los 14 FC",              "pg": 3, "pe": 1, "pp": 2, "dg": 4 },
+      { "equipo": "Pingüinos",              "pg": 3, "pe": 0, "pp": 3, "dg": 1 },
+      { "equipo": "Combinado FC",           "pg": 2, "pe": 1, "pp": 3, "dg": 2 },
+      { "equipo": "Mecánic",                "pg": 1, "pe": 1, "pp": 3, "dg": -11 },
+      { "equipo": "Norteños",               "pg": 1, "pe": 0, "pp": 6, "dg": -21 },
+      { "equipo": "San José FC",            "pg": 0, "pe": 0, "pp": 5, "dg": -17 }
     ]
   }
 ]

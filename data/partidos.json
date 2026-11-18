@@ -92,7 +92,8 @@
   "jugaron": ["alan", "julian", "eduardo", "mati", "esteban", "dario", "kevin", "richard"],
   "goles": { "mati": 1 },
   "asistencias": { "esteban": 1 },
-  "figura": "mati"
+  "figura": "mati",
+  "arquero": "julian"
   },
   {
   "fecha": "2026-11-19",
