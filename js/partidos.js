@@ -213,6 +213,12 @@ async function iniciarPartidos() {
   });
 
   dibujar();
+
+  // Si entran desde "Tabla de posiciones" (partidos.html#bloque-tabla), bajar hasta la tabla
+  if (location.hash === '#bloque-tabla') {
+    const tabla = document.getElementById('bloque-tabla');
+    if (tabla && !tabla.hidden) tabla.scrollIntoView();
+  }
 }
 
 document.addEventListener('DOMContentLoaded', iniciarPartidos);

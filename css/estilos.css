@@ -780,3 +780,6 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 /* Lema del jugador en la ficha */
 .ficha-lema { margin-top: .5rem; color: var(--texto-suave); font-size: .9rem; }
 .ficha-lema b { color: var(--texto); font-style: italic; font-weight: 600; }
+
+/* Que la cabecera fija no tape el título al llegar desde el botón del inicio */
+#bloque-tabla { scroll-margin-top: 90px; }
