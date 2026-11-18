@@ -792,3 +792,53 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
     url('../img/logo/hinchada.jpg') center 35% / cover no-repeat,
     #07130b;
 }
+
+/* ============ TIENDA estilo marketplace (fondo claro, tarjetas blancas) ============ */
+body[data-pagina="tienda"] { background: #ebebeb; color: #333; }
+body[data-pagina="tienda"] main { background: #ebebeb; }
+.ml-tienda { padding: 1.2rem 0 3rem; }
+.ml-barra { display: flex; align-items: center; gap: 1.2rem; background: #fff; border-radius: 8px; padding: .9rem 1.2rem; box-shadow: 0 1px 2px rgba(0,0,0,.12); margin-bottom: 1rem; flex-wrap: wrap; }
+.ml-titulo { display: flex; align-items: center; gap: .8rem; }
+.ml-titulo img { width: 46px; height: 46px; }
+.ml-titulo h1 { font-size: 1.3rem; color: #222; text-transform: none; letter-spacing: 0; }
+.ml-titulo small { color: #777; }
+.ml-buscar { flex: 1; min-width: 220px; padding: .75rem 1rem; border: 1px solid #ddd; border-radius: 6px; font: inherit; font-size: 1rem; background: #f7f7f7; color: #222; }
+.ml-buscar:focus { outline: 2px solid var(--verde); background: #fff; }
+.ml-layout { display: grid; grid-template-columns: 220px 1fr; gap: 1.2rem; align-items: start; }
+.ml-lateral h2 { font-size: 1rem; color: #222; margin-bottom: .6rem; text-transform: none; letter-spacing: 0; }
+body[data-pagina="tienda"] .filtros { display: flex; flex-direction: column; gap: .1rem; margin: 0; justify-content: flex-start; }
+body[data-pagina="tienda"] .filtro { background: none; border: 0; border-radius: 4px; color: #555; text-align: left; padding: .45rem .5rem; display: flex; justify-content: space-between; font-size: .95rem; }
+body[data-pagina="tienda"] .filtro:hover { color: #0d6b34; background: rgba(0,0,0,.04); }
+body[data-pagina="tienda"] .filtro.activo { background: none; color: #0d6b34; font-weight: 700; }
+body[data-pagina="tienda"] .filtro small { color: #999; }
+.ml-cab { display: flex; justify-content: space-between; align-items: center; margin-bottom: .8rem; color: #666; font-size: .9rem; }
+.ml-cab select { margin-left: .4rem; padding: .35rem .5rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; color: #333; font: inherit; }
+body[data-pagina="tienda"] .grid-productos { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1rem; }
+body[data-pagina="tienda"] .producto { background: #fff; border: 0; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.12); overflow: hidden; }
+body[data-pagina="tienda"] .producto:hover { transform: none; box-shadow: 0 6px 16px rgba(0,0,0,.18); }
+body[data-pagina="tienda"] .producto-img { background: #fff; border-bottom: 1px solid #eee; }
+body[data-pagina="tienda"] .producto-info { padding: 1rem; gap: .3rem; }
+body[data-pagina="tienda"] .producto-info .precio { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 400; color: #222; margin-top: 0; }
+.precio-antes { color: #999; text-decoration: line-through; font-size: .85rem; }
+.off { color: #00a650; font-size: .8rem; font-weight: 600; margin-left: .5rem; }
+body[data-pagina="tienda"] .producto-info h3 { font-size: .95rem; font-weight: 400; color: #333; text-transform: none; letter-spacing: 0; }
+body[data-pagina="tienda"] .producto-info .detalle { color: #888; font-size: .8rem; }
+.envio { color: #00a650; font-size: .82rem; font-weight: 600; }
+body[data-pagina="tienda"] .talle { background: #fff; border: 1px solid #ccc; color: #444; }
+body[data-pagina="tienda"] .talle.activo { background: #0d6b34; border-color: #0d6b34; color: #fff; }
+body[data-pagina="tienda"] .producto .boton { margin-top: .5rem; border-radius: 6px; }
+body[data-pagina="tienda"] .nota-tienda { color: #777; }
+body[data-pagina="tienda"] .mensaje-vacio { color: #666; }
+@media (max-width: 760px) {
+  .ml-layout { grid-template-columns: 1fr; gap: .6rem; }
+  .ml-lateral h2 { display: none; }
+  body[data-pagina="tienda"] .filtros { flex-direction: row; overflow-x: auto; gap: .5rem; padding-bottom: .3rem; }
+  body[data-pagina="tienda"] .filtro { background: #fff; border: 1px solid #ddd; border-radius: 999px; white-space: nowrap; gap: .4rem; }
+  body[data-pagina="tienda"] .filtro.activo { background: #0d6b34; color: #fff; border-color: #0d6b34; }
+  body[data-pagina="tienda"] .grid-productos { grid-template-columns: repeat(2, 1fr); gap: .6rem; }
+  body[data-pagina="tienda"] .producto-info { padding: .7rem; }
+  body[data-pagina="tienda"] .producto-info .precio { font-size: 1.2rem; }
+}
+body[data-pagina="tienda"] .cabecera, body[data-pagina="tienda"] .pie { color: var(--texto); }
+body[data-pagina="tienda"] .producto .boton { margin-top: auto; }
+body[data-pagina="tienda"] .talles { margin-bottom: .5rem; }

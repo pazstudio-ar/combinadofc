@@ -25,19 +25,32 @@
   <header class="cabecera" id="cabecera"></header>
 
   <main>
-    <section class="banner">
+    <section class="ml-tienda">
       <div class="contenedor">
-        <span>Tienda oficial</span>
-        <h1>Tienda</h1>
-        <p>Llevá los colores puestos. Armá tu pedido y mandalo por WhatsApp.</p>
-      </div>
-    </section>
-
-    <section class="seccion">
-      <div class="contenedor">
-        <div class="filtros" id="filtros"></div>
-        <div class="grid-productos" id="grid-productos"></div>
-        <p class="nota-tienda">Los precios y la disponibilidad se confirman por WhatsApp. El pago y la entrega se coordinan con el club.</p>
+        <div class="ml-barra">
+          <div class="ml-titulo"><img src="img/logo/escudo.png" alt=""><div><h1>Tienda oficial</h1><small>Combinado FC · pedidos por WhatsApp</small></div></div>
+          <input type="search" id="buscar" class="ml-buscar" placeholder="Buscar camisetas, buzos, camperas…" aria-label="Buscar productos">
+        </div>
+        <div class="ml-layout">
+          <aside class="ml-lateral">
+            <h2>Categorías</h2>
+            <div class="filtros" id="filtros"></div>
+          </aside>
+          <div class="ml-resultados">
+            <div class="ml-cab">
+              <span id="ml-cant"></span>
+              <label>Ordenar por
+                <select id="orden">
+                  <option value="relevantes">Más relevantes</option>
+                  <option value="menor">Menor precio</option>
+                  <option value="mayor">Mayor precio</option>
+                </select>
+              </label>
+            </div>
+            <div class="grid-productos" id="grid-productos"></div>
+            <p class="nota-tienda">Los precios y la disponibilidad se confirman por WhatsApp. El pago y la entrega se coordinan con el club.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>

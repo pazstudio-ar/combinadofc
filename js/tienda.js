@@ -4,6 +4,8 @@ const CLAVE_CARRITO = 'combinado-carrito';
 let productos = [];
 let config = {};
 let categoriaActual = 'Todos';
+let busqueda = '';
+let orden = 'relevantes';
 let carrito = leerCarrito();   // [{ id, talle, cant }]
 
 /* ----- Guardado en el celular del cliente ----- */
@@ -25,6 +27,9 @@ function tarjetaProducto(p) {
   const talles = (p.talles || []).map(t =>
     `<button type="button" class="talle" data-talle="${esc(t)}">${esc(t)}</button>`).join('');
 
+  const antes = Number(p.precioAnterior) > Number(p.precio) ? Number(p.precioAnterior) : 0;
+  const off = antes ? Math.round((1 - p.precio / antes) * 100) : 0;
+
   return `
     <article class="producto ${agotado ? 'agotado' : ''}" data-id="${esc(p.id)}">
       <div class="producto-img">
@@ -33,10 +38,12 @@ function tarjetaProducto(p) {
         ${agotado ? '<span class="sello">Agotado</span>' : ''}
       </div>
       <div class="producto-info">
+        ${antes ? `<p class="precio-antes">${precio(antes)}</p>` : ''}
+        <p class="precio">${precio(p.precio)}${off ? `<span class="off">${off}% OFF</span>` : ''}</p>
         <h3>${esc(p.nombre)}</h3>
         ${p.detalle ? `<p class="detalle">${esc(p.detalle)}</p>` : ''}
+        ${agotado ? '' : '<p class="envio">Pedilo por WhatsApp</p>'}
         ${talles ? `<div class="talles" role="group" aria-label="Talles">${talles}</div>` : ''}
-        <p class="precio">${precio(p.precio)}</p>
         <button class="boton agregar" ${agotado ? 'disabled' : ''}>${agotado ? 'Agotado' : 'Agregar al pedido'}</button>
         <small class="aviso" aria-live="polite"></small>
       </div>
@@ -53,10 +60,21 @@ function dibujarFiltros() {
   }).join('');
 }
 
+function productosVisibles() {
+  const q = busqueda.trim().toLowerCase();
+  let lista = productos.filter(p =>
+    (categoriaActual === 'Todos' || p.categoria === categoriaActual) &&
+    (!q || `${p.nombre} ${p.detalle || ''} ${p.categoria || ''}`.toLowerCase().includes(q)));
+  if (orden === 'menor') lista = [...lista].sort((a, b) => a.precio - b.precio);
+  if (orden === 'mayor') lista = [...lista].sort((a, b) => b.precio - a.precio);
+  return lista;
+}
+
 function dibujarProductos() {
-  const lista = categoriaActual === 'Todos' ? productos : productos.filter(p => p.categoria === categoriaActual);
+  const lista = productosVisibles();
+  document.getElementById('ml-cant').textContent = `${lista.length} resultado${lista.length === 1 ? '' : 's'}`;
   document.getElementById('grid-productos').innerHTML =
-    lista.map(tarjetaProducto).join('') || '<p class="mensaje-vacio">No hay productos en esta categoría.</p>';
+    lista.map(tarjetaProducto).join('') || '<p class="mensaje-vacio">No encontramos productos con esa búsqueda.</p>';
 }
 
 /* ----- Carrito ----- */
@@ -173,6 +191,9 @@ async function iniciarTienda() {
     dibujarFiltros();
     dibujarProductos();
   });
+
+  document.getElementById('buscar').addEventListener('input', e => { busqueda = e.target.value; dibujarProductos(); });
+  document.getElementById('orden').addEventListener('change', e => { orden = e.target.value; dibujarProductos(); });
 
   // Clics dentro de la grilla: elegir talle y agregar
   document.getElementById('grid-productos').addEventListener('click', e => {
