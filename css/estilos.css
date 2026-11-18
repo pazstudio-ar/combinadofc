@@ -783,3 +783,12 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 
 /* Que la cabecera fija no tape el título al llegar desde el botón del inicio */
 #bloque-tabla { scroll-margin-top: 90px; }
+
+/* Foto de la hinchada de fondo en la portada, con degradado oscuro para que se lea el texto */
+.hero {
+  background:
+    linear-gradient(180deg, rgba(7,19,11,.80) 0%, rgba(7,19,11,.62) 45%, rgba(10,13,11,.96) 100%),
+    radial-gradient(circle at 50% 30%, rgba(25,194,90,.22), transparent 60%),
+    url('../img/logo/hinchada.jpg') center 35% / cover no-repeat,
+    #07130b;
+}
