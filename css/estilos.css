@@ -884,3 +884,13 @@ body.sin-scroll { overflow: hidden; }
   min-width: 22px; height: 22px; line-height: 22px; font-size: .75rem; font-weight: 700; padding: 0 5px;
 }
 .carrito-flotante .cant:empty, .carrito-flotante .cant[data-cero="1"] { display: none; }
+
+/* Tienda en celular: barra superior compacta, sin escudo grande y buscador a todo el ancho */
+@media (max-width: 760px) {
+  .ml-tienda { padding-top: .8rem; }
+  .ml-barra { padding: .7rem; gap: .6rem; flex-direction: column; align-items: stretch; }
+  .ml-titulo img { display: none; }
+  .ml-titulo h1 { font-size: 1.05rem; }
+  .ml-titulo small { font-size: .78rem; }
+  .ml-buscar { flex: none; width: 100%; min-width: 0; box-sizing: border-box; padding: .65rem .9rem; font-size: 16px; }
+}
