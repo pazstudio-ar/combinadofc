@@ -152,6 +152,96 @@ function dibujarCarrito() {
     <button class="vaciar" data-accion="vaciar">Vaciar pedido</button>`;
 }
 
+/* ----- Detalle del producto (se abre al tocar una carta) ----- */
+
+let detalleId = null;
+
+function abrirDetalle(id, actualizarHash = true) {
+  const p = buscarProducto(id);
+  if (!p) return;
+  detalleId = id;
+  const agotado = p.disponible === false;
+  const fotos = (p.imagenes && p.imagenes.length ? p.imagenes : [p.imagen]).filter(Boolean);
+  const antes = Number(p.precioAnterior) > Number(p.precio) ? Number(p.precioAnterior) : 0;
+  const off = antes ? Math.round((1 - p.precio / antes) * 100) : 0;
+  const talles = (p.talles || []).map(t => `<button type="button" class="talle" data-talle="${esc(t)}">${esc(t)}</button>`).join('');
+
+  document.getElementById('pd-contenido').innerHTML = `
+    <div class="pd-galeria">
+      <img class="pd-foto" id="pd-foto" src="${esc(fotos[0])}" alt="${esc(p.nombre)}" onerror="this.src='img/logo/escudo.png'">
+      ${fotos.length > 1 ? `<div class="pd-mini">${fotos.map((f, i) =>
+        `<button type="button" class="${i ? '' : 'activa'}" data-foto="${esc(f)}" aria-label="Foto ${i + 1}"><img src="${esc(f)}" alt=""></button>`).join('')}</div>` : ''}
+    </div>
+    <div class="pd-info">
+      <small class="pd-cat">${esc(p.categoria || '')}${p.detalle ? ' · ' + esc(p.detalle) : ''}</small>
+      <h2 id="pd-titulo">${esc(p.nombre)}</h2>
+      ${antes ? `<p class="precio-antes">${precio(antes)}</p>` : ''}
+      <p class="pd-precio">${precio(p.precio)}${off ? `<span class="off">${off}% OFF</span>` : ''}</p>
+      ${p.descripcion ? `<p class="pd-desc">${esc(p.descripcion)}</p>` : ''}
+      ${talles ? `<p class="pd-label">Talle</p><div class="talles" role="group" aria-label="Talles">${talles}</div>` : ''}
+      <button class="boton agregar" id="pd-agregar" ${agotado ? 'disabled' : ''}>${agotado ? 'Agotado' : 'Agregar al pedido'}</button>
+      <small class="aviso" id="pd-aviso" aria-live="polite"></small>
+      <ul class="pd-pasos">
+        <li><b>1.</b> Elegí tu talle y agregá el producto</li>
+        <li><b>2.</b> Revisá tu pedido y tocá "Pedir por WhatsApp"</li>
+        <li><b>3.</b> Coordinamos pago y entrega con el club</li>
+      </ul>
+    </div>`;
+
+  document.getElementById('pd').hidden = false;
+  document.body.classList.add('sin-scroll');
+  if (actualizarHash) history.pushState(null, '', '#' + encodeURIComponent(id));
+}
+
+function cerrarDetalle(actualizarHash = true) {
+  if (detalleId === null) return;
+  detalleId = null;
+  document.getElementById('pd').hidden = true;
+  document.body.classList.remove('sin-scroll');
+  if (actualizarHash && location.hash) history.pushState(null, '', location.pathname + location.search);
+}
+
+function iniciarDetalle() {
+  const pd = document.getElementById('pd');
+  pd.addEventListener('click', e => {
+    if (e.target === pd || e.target.closest('#pd-cerrar')) return cerrarDetalle();
+    const mini = e.target.closest('[data-foto]');
+    if (mini) {
+      document.getElementById('pd-foto').src = mini.dataset.foto;
+      pd.querySelectorAll('.pd-mini button').forEach(b => b.classList.toggle('activa', b === mini));
+      return;
+    }
+    const talle = e.target.closest('.talle');
+    if (talle) {
+      pd.querySelectorAll('.talle').forEach(b => b.classList.remove('activo'));
+      talle.classList.add('activo');
+      document.getElementById('pd-aviso').textContent = '';
+      return;
+    }
+    if (e.target.closest('#pd-agregar')) {
+      const p = buscarProducto(detalleId);
+      const aviso = document.getElementById('pd-aviso');
+      const elegido = pd.querySelector('.talle.activo');
+      if ((p.talles || []).length && !elegido) {
+        aviso.textContent = 'Elegí un talle primero'; aviso.classList.add('error'); return;
+      }
+      aviso.classList.remove('error');
+      agregarAlCarrito(p.id, elegido ? elegido.dataset.talle : '');
+      aviso.textContent = '✓ Agregado a tu pedido';
+      setTimeout(() => { aviso.textContent = ''; }, 2000);
+    }
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarDetalle(); });
+
+  // Link directo: tienda.html#camiseta-titular  (y botón "atrás" del celular)
+  const desdeHash = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (id && buscarProducto(id)) abrirDetalle(id, false); else cerrarDetalle(false);
+  };
+  window.addEventListener('popstate', desdeHash);
+  desdeHash();
+}
+
 /* ----- Abrir / cerrar panel ----- */
 
 function abrirCarrito() {
@@ -183,6 +273,7 @@ async function iniciarTienda() {
   dibujarFiltros();
   dibujarProductos();
   dibujarCarrito();
+  iniciarDetalle();
 
   document.getElementById('filtros').addEventListener('click', e => {
     const btn = e.target.closest('.filtro');
@@ -200,6 +291,8 @@ async function iniciarTienda() {
     const card = e.target.closest('.producto');
     if (!card) return;
     const aviso = card.querySelector('.aviso');
+
+    if (!e.target.closest('.talle, .agregar')) { abrirDetalle(card.dataset.id); return; }
 
     const talleBtn = e.target.closest('.talle');
     if (talleBtn) {
