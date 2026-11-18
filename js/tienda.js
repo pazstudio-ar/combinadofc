@@ -118,7 +118,9 @@ function dibujarCarrito() {
   const cantidad = lineas.reduce((s, l) => s + l.cant, 0);
   const total = lineas.reduce((s, l) => s + l.p.precio * l.cant, 0);
 
-  document.getElementById('carrito-cant').textContent = cantidad;
+  const cEl = document.getElementById('carrito-cant');
+  cEl.textContent = cantidad;
+  cEl.dataset.cero = cantidad ? '0' : '1';
 
   const items = document.getElementById('carrito-items');
   const pie = document.getElementById('carrito-pie');

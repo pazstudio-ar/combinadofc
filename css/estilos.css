@@ -862,3 +862,25 @@ body.sin-scroll { overflow: hidden; }
   .pd-contenido { grid-template-columns: 1fr; gap: 1rem; }
   .pd-info { padding-top: 0; }
 }
+
+/* ---- Botones más sutiles + carrito moderno (redondo, solo ícono) ---- */
+.ml-resultados .producto .boton.agregar {
+  background: transparent; color: var(--verde); border: 1px solid var(--verde);
+  padding: .55rem .8rem; font-size: .78rem; letter-spacing: .06em; border-radius: 8px; transform: none;
+}
+.ml-resultados .producto .boton.agregar:hover:not(:disabled) { background: var(--verde); color: #04120a; }
+.ml-resultados .producto .boton.agregar:disabled { border-color: var(--borde); color: var(--texto-suave); }
+.pd-info .boton { padding: .7rem 1.2rem; font-size: .85rem; border-radius: 10px; transform: none; }
+
+.carrito-flotante {
+  right: 1.2rem; bottom: 1.2rem; width: 56px; height: 56px; padding: 0; justify-content: center; position: fixed;
+  background: rgba(19, 26, 21, .88); color: var(--texto); border: 1px solid var(--borde);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+}
+.carrito-flotante:hover { border-color: var(--verde); color: var(--verde); }
+.carrito-flotante .cant {
+  position: absolute; top: -4px; right: -4px; background: var(--verde); color: #04120a;
+  min-width: 22px; height: 22px; line-height: 22px; font-size: .75rem; font-weight: 700; padding: 0 5px;
+}
+.carrito-flotante .cant:empty, .carrito-flotante .cant[data-cero="1"] { display: none; }
