@@ -61,7 +61,7 @@ function filaPartido(p, mostrarTorneo) {
   const etiqueta = { V: 'Victoria', E: 'Empate', D: 'Derrota' }[r] || 'Próximo';
 
   const fechaTxt = fechaLarga(p.fecha) + (p.hora ? ` · ${esc(p.hora)} hs` : '');
-  const cab = [esc(nombreTorneo(p)), p.lugar ? '📍 ' + esc(p.lugar) : '']
+  const cab = [esc(nombreTorneo(p)), p.lugar ? esc(p.lugar) : '']
     .filter(Boolean).join(' · ');
 
   const centro = jugado
@@ -74,9 +74,9 @@ function filaPartido(p, mostrarTorneo) {
   if (jugado && p.figura) {
     const foto = fotos[p.figura];
     pie.push(`<span class="mc-figura">${foto ? `<img src="${esc(foto)}" alt="" loading="lazy" onerror="this.remove()">` : ''}
-      ⭐ Figura: <b>${esc(nombres[p.figura] || p.figura)}</b></span>`);
+      Figura: <b>${esc(nombres[p.figura] || p.figura)}</b></span>`);
   }
-  if (jugado && textoGol) pie.push(`<span>⚽ ${esc(textoGol)}</span>`);
+  if (jugado && textoGol) pie.push(`<span>Goles: ${esc(textoGol)}</span>`);
   if (p.noticia) pie.push(`<a href="noticia.html?id=${encodeURIComponent(p.noticia)}">Leer la crónica →</a>`);
 
   return `

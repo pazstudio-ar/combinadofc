@@ -10,7 +10,7 @@
   --texto-suave: #9aa8a0;
   --rojo: #e5484d;
   --amarillo: #f5b73b;
-  --radio: 14px;
+  --radio: 0;
 }
 
 /* ============ BASE ============ */
@@ -44,7 +44,7 @@ h1, h2, h3, h4 {
 
 /* ============ BOTONES ============ */
 .boton {
-  display: inline-block; padding: .85rem 1.8rem; border-radius: 999px;
+  display: inline-block; padding: .85rem 1.8rem; border-radius: 0;
   font-weight: 600; font-size: .9rem; text-transform: uppercase;
   letter-spacing: .06em; border: 2px solid var(--verde);
   background: var(--verde); color: #04120a; cursor: pointer;
@@ -81,7 +81,7 @@ h1, h2, h3, h4 {
 .menu-btn {
   display: none; background: none; border: 1px solid var(--borde);
   color: var(--texto); font-size: 1.4rem; width: 44px; height: 44px;
-  border-radius: 10px; cursor: pointer;
+  border-radius: 0; cursor: pointer;
 }
 
 /* ============ HERO ============ */
@@ -114,7 +114,7 @@ h1, h2, h3, h4 {
 .etiqueta {
   display: inline-block; background: rgba(25, 194, 90, .12); color: var(--verde);
   font-size: .75rem; font-weight: 700; letter-spacing: .15em;
-  text-transform: uppercase; padding: .3rem .9rem; border-radius: 999px;
+  text-transform: uppercase; padding: .3rem .9rem; border-radius: 0;
 }
 .partido-card h3 { font-size: 1.6rem; margin: 1.2rem 0 .4rem; }
 .partido-card h3 .vs { color: var(--verde); font-size: 1rem; padding: 0 .4rem; }
@@ -123,7 +123,7 @@ h1, h2, h3, h4 {
 .meta { color: var(--texto-suave); font-size: .95rem; }
 .torneo { margin-top: .6rem; font-weight: 600; font-size: .9rem; }
 .badge {
-  display: inline-block; width: 28px; height: 28px; line-height: 28px; border-radius: 50%;
+  display: inline-block; width: 28px; height: 28px; line-height: 28px; border-radius: 0;
   font-size: .8rem; font-weight: 700; color: #04120a; margin-left: .5rem; vertical-align: middle;
 }
 .badge.V { background: var(--verde); }
@@ -228,7 +228,7 @@ h1, h2, h3, h4 {
 .filtros { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-bottom: 2.5rem; }
 .filtro {
   background: var(--gris); color: var(--texto-suave);
-  border: 1px solid var(--borde); border-radius: 999px;
+  border: 1px solid var(--borde); border-radius: 0;
   padding: .55rem 1.2rem; font: 600 .82rem 'Inter', sans-serif;
   text-transform: uppercase; letter-spacing: .06em; cursor: pointer;
   transition: all .2s;
@@ -246,7 +246,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 
 /* ============ FICHA DEL JUGADOR (ventana emergente) ============ */
 .ficha {
-  border: 1px solid var(--borde); border-radius: 18px;
+  border: 1px solid var(--borde); border-radius: 0;
   background: var(--gris); color: var(--texto);
   width: min(760px, 94vw); padding: 0; overflow: hidden;
   margin: auto;
@@ -258,7 +258,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .ficha-datos { padding: 2rem; position: relative; }
 .ficha-cerrar {
   position: absolute; top: .8rem; right: .8rem; width: 38px; height: 38px;
-  border-radius: 50%; border: 1px solid var(--borde); background: var(--gris-claro);
+  border-radius: 0; border: 1px solid var(--borde); background: var(--gris-claro);
   color: var(--texto); font-size: 1.1rem; cursor: pointer;
 }
 .ficha-cerrar:hover { border-color: var(--verde); color: var(--verde); }
@@ -267,7 +267,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .ficha-pos { color: var(--texto-suave); text-transform: uppercase; letter-spacing: .15em; font-size: .8rem; font-weight: 600; }
 .ficha-apodo { color: var(--verde); font-style: italic; margin-top: .3rem; }
 .ficha-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; margin: 1.4rem 0; }
-.ficha-stats div { background: var(--gris-claro); border: 1px solid var(--borde); border-radius: 10px; padding: .8rem .4rem; text-align: center; }
+.ficha-stats div { background: var(--gris-claro); border: 1px solid var(--borde); border-radius: 0; padding: .8rem .4rem; text-align: center; }
 .ficha-stats b { display: block; font-family: 'Oswald', sans-serif; font-size: 1.7rem; color: var(--verde); line-height: 1; }
 .ficha-stats span { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--texto-suave); }
 .ficha-bio { color: var(--texto-suave); font-size: .95rem; }
@@ -292,7 +292,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 }
 .barra-torneo select {
   background: var(--gris-claro); color: var(--texto); border: 1px solid var(--borde);
-  border-radius: 10px; padding: .7rem 1rem; font: 600 .95rem 'Inter', sans-serif;
+  border-radius: 0; padding: .7rem 1rem; font: 600 .95rem 'Inter', sans-serif;
   min-width: min(340px, 100%); cursor: pointer;
 }
 .barra-torneo select:focus { outline: 2px solid var(--verde); }
@@ -353,7 +353,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .buscador { max-width: 420px; margin: 0 auto 1.5rem; }
 .buscador input {
   width: 100%; background: var(--gris); color: var(--texto);
-  border: 1px solid var(--borde); border-radius: 999px;
+  border: 1px solid var(--borde); border-radius: 0;
   padding: .85rem 1.3rem; font: 400 .95rem 'Inter', sans-serif;
 }
 .buscador input:focus { outline: 2px solid var(--verde); }
@@ -371,7 +371,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .articulo-texto { margin-top: 2rem; }
 .articulo-texto p { font-size: 1.08rem; margin-bottom: 1.3rem; color: #d3ddd5; }
 .fotos-extra { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .8rem; margin: 2rem 0; }
-.fotos-extra img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; border: 1px solid var(--borde); }
+.fotos-extra img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 0; border: 1px solid var(--borde); }
 
 .compartir {
   display: flex; flex-wrap: wrap; gap: .8rem; align-items: center;
@@ -416,14 +416,14 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 }
 .visor-img {
   max-width: min(1100px, 100%); max-height: 78vh; object-fit: contain;
-  border-radius: 8px; user-select: none; -webkit-user-drag: none;
+  border-radius: 0; user-select: none; -webkit-user-drag: none;
 }
 .visor-pie { margin-top: 1rem; text-align: center; max-width: 700px; }
 .visor-pie p { color: #dfe8e1; }
 .visor-pie small { color: var(--texto-suave); letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; }
 .visor-btn {
   position: absolute; background: rgba(255, 255, 255, .1); color: #fff;
-  border: 1px solid rgba(255, 255, 255, .2); border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .2); border-radius: 0;
   width: 48px; height: 48px; font-size: 1.3rem; cursor: pointer;
   transition: background .2s;
 }
@@ -450,7 +450,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .sello {
   position: absolute; top: .8rem; left: .8rem; background: var(--rojo); color: #fff;
   font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-  padding: .3rem .8rem; border-radius: 999px;
+  padding: .3rem .8rem; border-radius: 0;
 }
 .producto.agotado .producto-img img { opacity: .4; }
 .producto-info { padding: 1.2rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
@@ -459,7 +459,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .producto-info .precio { font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: var(--verde); font-weight: 700; margin-top: auto; }
 .talles { display: flex; flex-wrap: wrap; gap: .4rem; margin: .3rem 0; }
 .talle {
-  min-width: 42px; padding: .4rem .6rem; border-radius: 8px; cursor: pointer;
+  min-width: 42px; padding: .4rem .6rem; border-radius: 0; cursor: pointer;
   background: var(--gris-claro); color: var(--texto); border: 1px solid var(--borde);
   font: 600 .82rem 'Inter', sans-serif; transition: all .2s;
 }
@@ -473,7 +473,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 /* Botón flotante del carrito */
 .carrito-flotante {
   position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 60;
-  background: var(--verde); color: #04120a; border: none; border-radius: 999px;
+  background: var(--verde); color: #04120a; border: none; border-radius: 0;
   padding: .9rem 1.4rem; font: 700 1rem 'Inter', sans-serif; cursor: pointer;
   box-shadow: 0 6px 24px rgba(0, 0, 0, .5); display: flex; align-items: center; gap: .6rem;
   transition: transform .2s;
@@ -482,7 +482,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .carrito-flotante.salto { animation: salto .35s; }
 @keyframes salto { 50% { transform: scale(1.15); } }
 .carrito-flotante .cant {
-  background: #04120a; color: var(--verde); border-radius: 999px;
+  background: #04120a; color: var(--verde); border-radius: 0;
   min-width: 26px; height: 26px; line-height: 26px; text-align: center; font-size: .85rem;
 }
 
@@ -498,19 +498,19 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .carrito-cab { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 1.4rem; border-bottom: 1px solid var(--borde); }
 .carrito-cab h2 { font-size: 1.5rem; }
 .carrito-cab button {
-  width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--borde);
+  width: 38px; height: 38px; border-radius: 0; border: 1px solid var(--borde);
   background: var(--gris-claro); color: var(--texto); cursor: pointer; font-size: 1.05rem;
 }
 .carrito-cab button:hover { border-color: var(--verde); color: var(--verde); }
 .carrito-items { flex: 1; overflow-y: auto; padding: 1rem 1.4rem; }
 .item-carrito { display: grid; grid-template-columns: 64px 1fr auto; gap: .9rem; align-items: center; padding: .9rem 0; border-bottom: 1px solid var(--borde); }
-.item-carrito img { width: 64px; height: 64px; object-fit: contain; background: var(--gris-claro); border-radius: 10px; }
+.item-carrito img { width: 64px; height: 64px; object-fit: contain; background: var(--gris-claro); border-radius: 0; }
 .item-carrito h4 { font-size: 1rem; }
 .item-carrito small { color: var(--texto-suave); display: block; }
 .item-carrito .sub { color: var(--verde); font-weight: 700; margin-top: .2rem; }
 .cantidad { display: flex; align-items: center; gap: .5rem; margin-top: .4rem; }
 .cantidad button {
-  width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--borde);
+  width: 28px; height: 28px; border-radius: 0; border: 1px solid var(--borde);
   background: var(--gris-claro); color: var(--texto); cursor: pointer; font-size: 1rem; line-height: 1;
 }
 .cantidad button:hover { border-color: var(--verde); }
@@ -536,7 +536,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 }
 .tarjeta-contacto:hover { border-color: var(--verde); transform: translateX(4px); }
 .tarjeta-contacto .ico {
-  width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+  width: 46px; height: 46px; border-radius: 0; flex-shrink: 0;
   display: grid; place-items: center; font-size: 1.3rem;
   background: rgba(25, 194, 90, .12);
 }
@@ -554,7 +554,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 }
 .campo input, .campo select, .campo textarea {
   width: 100%; background: var(--gris-claro); color: var(--texto);
-  border: 1px solid var(--borde); border-radius: 10px; padding: .8rem 1rem;
+  border: 1px solid var(--borde); border-radius: 0; padding: .8rem 1rem;
   font: 400 .98rem 'Inter', sans-serif;
 }
 .campo textarea { min-height: 140px; resize: vertical; }
@@ -602,7 +602,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 }
 .mini {
   flex: 0 0 auto; width: 64px; height: 64px; padding: 0; overflow: hidden; cursor: pointer;
-  border: 2px solid transparent; border-radius: 8px; background: #111; opacity: .5;
+  border: 2px solid transparent; border-radius: 0; background: #111; opacity: .5;
   transition: opacity .2s, border-color .2s;
 }
 .mini:hover { opacity: .85; }
@@ -664,7 +664,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .mc-torneo { font-weight: 600; letter-spacing: .04em; }
 .mc-estado {
   flex-shrink: 0; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  padding: .25rem .7rem; border-radius: 999px; background: var(--gris-claro); color: var(--texto);
+  padding: .25rem .7rem; border-radius: 0; background: var(--gris-claro); color: var(--texto);
 }
 .match-card.V .mc-estado { background: rgba(25, 194, 90, .18); color: var(--verde); }
 .match-card.E .mc-estado { background: rgba(245, 183, 59, .18); color: var(--amarillo); }
@@ -675,7 +675,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .mc-equipo b { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: .03em; font-size: 1.05rem; line-height: 1.15; overflow-wrap: anywhere; }
 .mc-escudo { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
 .mc-iniciales {
-  display: grid; place-items: center; border-radius: 50%; background: var(--gris-claro);
+  display: grid; place-items: center; border-radius: 0; background: var(--gris-claro);
   border: 2px solid var(--borde); font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--texto-suave);
 }
 .mc-centro { text-align: center; }
@@ -719,7 +719,7 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .slide-partido.D .sp-goles { color: var(--rojo); }
 .slide-partido.E .sp-goles { color: var(--amarillo); }
 .slide-partido.prox .sp-goles { color: var(--texto-suave); }
-.sp-figura { display: inline-flex; align-items: center; gap: .6rem; background: var(--gris-claro); border: 1px solid var(--borde); border-radius: 999px; padding: .35rem 1rem .35rem .4rem; }
+.sp-figura { display: inline-flex; align-items: center; gap: .6rem; background: var(--gris-claro); border: 1px solid var(--borde); border-radius: 0; padding: .35rem 1rem .35rem .4rem; }
 .sp-figura img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--verde); }
 
 .slide-noticia { align-items: flex-start; text-align: left; justify-content: flex-end; }
@@ -731,14 +731,14 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 
 .portada-flecha {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
-  width: 46px; height: 46px; border-radius: 50%; cursor: pointer; font-size: 1.5rem;
+  width: 46px; height: 46px; border-radius: 0; cursor: pointer; font-size: 1.5rem;
   background: rgba(0, 0, 0, .5); color: #fff; border: 1px solid rgba(255, 255, 255, .25);
 }
 .portada-flecha:hover { background: var(--verde); color: #04120a; }
 .portada-flecha.ant { left: 1rem; }
 .portada-flecha.sig { right: 1rem; }
 .portada-puntos { position: absolute; bottom: 1rem; left: 0; right: 0; display: flex; justify-content: center; gap: .5rem; z-index: 2; }
-.portada-puntos button { width: 10px; height: 10px; padding: 0; border-radius: 999px; border: none; background: rgba(255, 255, 255, .35); cursor: pointer; transition: width .3s, background .3s; }
+.portada-puntos button { width: 10px; height: 10px; padding: 0; border-radius: 0; border: none; background: rgba(255, 255, 255, .35); cursor: pointer; transition: width .3s, background .3s; }
 .portada-puntos button.activo { width: 28px; background: var(--verde); }
 
 @media (max-width: 600px) {
@@ -800,17 +800,17 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 .ml-titulo img { width: 46px; height: 46px; }
 .ml-titulo h1 { font-size: 1.3rem; }
 .ml-titulo small { color: var(--texto-suave); }
-.ml-buscar { flex: 1; min-width: 220px; padding: .75rem 1rem; border: 1px solid var(--borde); border-radius: 999px; font: inherit; font-size: 1rem; background: var(--gris-claro); color: var(--texto); }
+.ml-buscar { flex: 1; min-width: 220px; padding: .75rem 1rem; border: 1px solid var(--borde); border-radius: 0; font: inherit; font-size: 1rem; background: var(--gris-claro); color: var(--texto); }
 .ml-buscar::placeholder { color: var(--texto-suave); }
 .ml-buscar:focus { outline: 2px solid var(--verde); }
 .ml-layout { display: grid; grid-template-columns: 220px 1fr; gap: 1.5rem; align-items: start; }
 .ml-lateral h2 { font-size: .95rem; color: var(--texto-suave); margin-bottom: .6rem; letter-spacing: .15em; text-transform: uppercase; }
 .ml-lateral .filtros { display: flex; flex-direction: column; gap: .1rem; margin: 0; justify-content: flex-start; }
-.ml-lateral .filtro { background: none; border: 0; border-radius: 6px; text-align: left; padding: .5rem .6rem; display: flex; justify-content: space-between; }
+.ml-lateral .filtro { background: none; border: 0; border-radius: 0; text-align: left; padding: .5rem .6rem; display: flex; justify-content: space-between; }
 .ml-lateral .filtro:hover { background: var(--gris); color: var(--texto); }
 .ml-lateral .filtro.activo { background: var(--gris); color: var(--verde); }
 .ml-cab { display: flex; justify-content: space-between; align-items: center; margin-bottom: .9rem; color: var(--texto-suave); font-size: .9rem; }
-.ml-cab select { margin-left: .4rem; padding: .35rem .5rem; border: 1px solid var(--borde); border-radius: 8px; background: var(--gris); color: var(--texto); font: inherit; }
+.ml-cab select { margin-left: .4rem; padding: .35rem .5rem; border: 1px solid var(--borde); border-radius: 0; background: var(--gris); color: var(--texto); font: inherit; }
 .ml-resultados .grid-productos { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1rem; }
 .ml-resultados .producto { cursor: pointer; }
 .ml-resultados .producto-info { padding: 1rem; gap: .3rem; }
@@ -826,13 +826,13 @@ button.jugador:focus-visible { outline: 3px solid var(--verde); outline-offset: 
 body.sin-scroll { overflow: hidden; }
 .pd-fondo { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.78); display: grid; place-items: center; padding: 1rem; overflow-y: auto; animation: pdFondo .2s ease; }
 .pd-fondo[hidden] { display: none; }
-.pd-caja { position: relative; width: min(960px, 100%); background: var(--gris); border: 1px solid var(--borde); border-radius: 18px; padding: 1.5rem; animation: pdCaja .25s ease; }
+.pd-caja { position: relative; width: min(960px, 100%); background: var(--gris); border: 1px solid var(--borde); border-radius: 0; padding: 1.5rem; animation: pdCaja .25s ease; }
 .pd-cerrar { position: absolute; top: .8rem; right: .8rem; z-index: 2; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--borde); background: var(--negro); color: var(--texto); font-size: 1rem; cursor: pointer; }
 .pd-cerrar:hover { border-color: var(--verde); color: var(--verde); }
 .pd-contenido { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; }
 .pd-foto { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; background: var(--gris-claro); border-radius: 12px; }
 .pd-mini { display: flex; gap: .5rem; margin-top: .6rem; overflow-x: auto; }
-.pd-mini button { width: 64px; height: 64px; flex: none; padding: 0; border: 2px solid var(--borde); border-radius: 8px; background: var(--gris-claro); cursor: pointer; overflow: hidden; }
+.pd-mini button { width: 64px; height: 64px; flex: none; padding: 0; border: 2px solid var(--borde); border-radius: 0; background: var(--gris-claro); cursor: pointer; overflow: hidden; }
 .pd-mini button.activa { border-color: var(--verde); }
 .pd-mini img { width: 100%; height: 100%; object-fit: cover; }
 .pd-info { display: flex; flex-direction: column; gap: .6rem; padding-top: 1.6rem; }
@@ -852,13 +852,13 @@ body.sin-scroll { overflow: hidden; }
   .ml-layout { grid-template-columns: 1fr; gap: .6rem; }
   .ml-lateral h2 { display: none; }
   .ml-lateral .filtros { flex-direction: row; overflow-x: auto; gap: .5rem; padding-bottom: .3rem; }
-  .ml-lateral .filtro { background: var(--gris); border: 1px solid var(--borde); border-radius: 999px; white-space: nowrap; gap: .4rem; }
+  .ml-lateral .filtro { background: var(--gris); border: 1px solid var(--borde); border-radius: 0; white-space: nowrap; gap: .4rem; }
   .ml-lateral .filtro.activo { background: var(--verde); color: #04120a; border-color: var(--verde); }
   .ml-resultados .grid-productos { grid-template-columns: repeat(2, 1fr); gap: .6rem; }
   .ml-resultados .producto-info { padding: .7rem; }
   .ml-resultados .producto-info .precio { font-size: 1.15rem; }
   .pd-fondo { align-items: end; padding: 0; }
-  .pd-caja { border-radius: 18px 18px 0 0; padding: 1rem; max-height: 94vh; overflow-y: auto; }
+  .pd-caja { border-radius: 0 18px 0 0; padding: 1rem; max-height: 94vh; overflow-y: auto; }
   .pd-contenido { grid-template-columns: 1fr; gap: 1rem; }
   .pd-info { padding-top: 0; }
 }
@@ -866,11 +866,11 @@ body.sin-scroll { overflow: hidden; }
 /* ---- Botones más sutiles + carrito moderno (redondo, solo ícono) ---- */
 .ml-resultados .producto .boton.agregar {
   background: transparent; color: var(--verde); border: 1px solid var(--verde);
-  padding: .55rem .8rem; font-size: .78rem; letter-spacing: .06em; border-radius: 8px; transform: none;
+  padding: .55rem .8rem; font-size: .78rem; letter-spacing: .06em; border-radius: 0; transform: none;
 }
 .ml-resultados .producto .boton.agregar:hover:not(:disabled) { background: var(--verde); color: #04120a; }
 .ml-resultados .producto .boton.agregar:disabled { border-color: var(--borde); color: var(--texto-suave); }
-.pd-info .boton { padding: .7rem 1.2rem; font-size: .85rem; border-radius: 10px; transform: none; }
+.pd-info .boton { padding: .7rem 1.2rem; font-size: .85rem; border-radius: 0; transform: none; }
 
 .carrito-flotante {
   right: 1.2rem; bottom: 1.2rem; width: 56px; height: 56px; padding: 0; justify-content: center; position: fixed;
@@ -1005,3 +1005,25 @@ body[data-pagina="tienda"] .total b { font-family: 'Oswald', sans-serif; color: 
 body[data-pagina="tienda"] .carrito-pie .boton { display: block; text-align: center; border-radius: 0; background: var(--texto); color: var(--negro); letter-spacing: .2em; font-size: .78rem; padding: .95rem; }
 body[data-pagina="tienda"] .carrito-pie .boton:hover { background: var(--verde); transform: none; }
 body[data-pagina="tienda"] .carrito-pie .boton, body[data-pagina="tienda"] .pd-info .boton { border-color: var(--texto); } body[data-pagina="tienda"] .carrito-pie .boton:hover, body[data-pagina="tienda"] .pd-info .boton:hover:not(:disabled) { border-color: var(--verde); }
+
+
+/* ============ SISTEMA DE BOTONES Y FORMAS (todo el sitio) ============ */
+.boton {
+  padding: .95rem 2rem; font-size: .78rem; font-weight: 600; letter-spacing: .2em;
+  border: 1px solid var(--texto); background: var(--texto); color: var(--negro);
+  transition: background .25s, color .25s, border-color .25s;
+}
+.boton:hover { transform: none; background: var(--verde); border-color: var(--verde); color: #04120a; }
+.boton.secundario { background: transparent; color: var(--texto); border-color: rgba(232, 239, 233, .4); }
+.boton.secundario:hover { background: var(--texto); border-color: var(--texto); color: var(--negro); }
+.boton:focus-visible, .filtro:focus-visible, .talle:focus-visible { outline: 2px solid var(--verde); outline-offset: 3px; }
+.tarjeta-contacto .ico { background: transparent; border: 1px solid var(--borde); color: var(--verde); }
+.tarjeta-contacto:hover .ico { border-color: var(--verde); }
+.ico-svg { display: block; }
+.portada-puntos button { height: 3px; }
+.ficha-cerrar, .visor-cerrar, .pd-cerrar, .carrito-cab button { display: grid; place-items: center; }
+.ficha-cerrar { border-radius: 0; }
+
+.badge { text-align: center; }
+#bloque-proximos, #bloque-tabla { margin-top: 3rem; }
+input, select, textarea { border-radius: 0; }

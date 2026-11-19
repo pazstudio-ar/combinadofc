@@ -37,10 +37,10 @@ async function iniciarContacto() {
   }
 
   const canales = [
-    tarjeta('💬', 'WhatsApp', 'Respondemos lo antes posible', `https://wa.me/${config.whatsapp}`),
-    config.redes?.instagram ? tarjeta('📸', 'Instagram', 'Fotos y novedades', config.redes.instagram) : '',
-    config.redes?.youtube ? tarjeta('▶️', 'YouTube', 'Resúmenes y videos', config.redes.youtube) : '',
-    config.email ? tarjeta('✉️', 'Email', config.email, `mailto:${config.email}`) : ''
+    tarjeta(icono('whatsapp'), 'WhatsApp', 'Respondemos lo antes posible', `https://wa.me/${config.whatsapp}`),
+    config.redes?.instagram ? tarjeta(icono('instagram'), 'Instagram', 'Fotos y novedades', config.redes.instagram) : '',
+    config.redes?.youtube ? tarjeta(icono('youtube'), 'YouTube', 'Resúmenes y videos', config.redes.youtube) : '',
+    config.email ? tarjeta(icono('mail'), 'Email', config.email, `mailto:${config.email}`) : ''
   ].join('');
   document.getElementById('canales').innerHTML = canales;
 

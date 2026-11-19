@@ -116,7 +116,7 @@ function construirVisor() {
   const visor = $('visor');
   visor.innerHTML = `
     <div class="visor-contenido">
-      <button class="visor-btn visor-cerrar" id="v-cerrar" aria-label="Cerrar">✕</button>
+      <button class="visor-btn visor-cerrar" id="v-cerrar" aria-label="Cerrar">${icono('cerrar', 18)}</button>
       <button class="visor-btn visor-ant" id="v-ant" aria-label="Foto anterior">‹</button>
       <img class="visor-img" id="v-img" alt="">
       <button class="visor-btn visor-sig" id="v-sig" aria-label="Foto siguiente">›</button>

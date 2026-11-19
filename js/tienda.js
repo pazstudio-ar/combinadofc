@@ -145,7 +145,7 @@ function dibujarCarrito() {
         </div>
         <p class="sub">${precio(l.p.precio * l.cant)}</p>
       </div>
-      <button class="item-quitar" data-accion="quitar" data-i="${i}" aria-label="Quitar del pedido">✕</button>
+      <button class="item-quitar" data-accion="quitar" data-i="${i}" aria-label="Quitar del pedido">${icono('cerrar', 18)}</button>
     </div>`).join('');
 
   const link = `https://wa.me/${esc(config.whatsapp)}?text=${encodeURIComponent(mensajeWhatsApp(lineas, total))}`;
@@ -230,7 +230,7 @@ function iniciarDetalle() {
       }
       aviso.classList.remove('error');
       agregarAlCarrito(p.id, elegido ? elegido.dataset.talle : '');
-      aviso.textContent = '✓ Agregado a tu pedido';
+      aviso.textContent = 'Agregado a tu pedido';
       setTimeout(() => { aviso.textContent = ''; }, 2000);
     }
   });
@@ -318,7 +318,7 @@ async function iniciarTienda() {
       }
       aviso.classList.remove('error');
       agregarAlCarrito(p.id, elegido ? elegido.dataset.talle : '');
-      aviso.textContent = '✓ Agregado a tu pedido';
+      aviso.textContent = 'Agregado a tu pedido';
       setTimeout(() => { aviso.textContent = ''; }, 2000);
     }
   });

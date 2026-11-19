@@ -81,12 +81,25 @@ function construirCabecera(cfg) {
         <span>${esc(cfg.nombre)}</span>
       </a>
       <nav class="nav" id="nav">${links}</nav>
-      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú">☰</button>
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú">${icono('menu', 24)}</button>
     </div>`;
 
   document.getElementById('menu-btn').addEventListener('click', () => {
     document.getElementById('nav').classList.toggle('abierto');
   });
+}
+
+/* Íconos de línea (en vez de emojis) */
+const ICONOS = {
+  menu:      '<path d="M4 7h16M4 12h16M4 17h16"/>',
+  cerrar:    '<path d="M6 6l12 12M18 6L6 18"/>',
+  whatsapp:  '<path d="M4 20l1.3-4.2A8 8 0 1 1 8.2 18.8L4 20z"/><path d="M9 9.5c.3 2.5 2.5 4.7 5 5l1.2-1.2-1.7-1-.8.7a3.5 3.5 0 0 1-1.7-1.7l.7-.8-1-1.7L9 9.5z"/>',
+  instagram: '<rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6"/>',
+  youtube:   '<rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10.5 9.5v5l4-2.5-4-2.5z"/>',
+  mail:      '<rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="M4 7l8 6 8-6"/>'
+};
+function icono(nombre, tam = 22) {
+  return `<svg class="ico-svg" viewBox="0 0 24 24" width="${tam}" height="${tam}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONOS[nombre] || ''}</svg>`;
 }
 
 function construirPie(cfg) {

@@ -9,9 +9,9 @@ function tarjetaProximo(p) {
         <p class="meta">Todavía no hay un partido programado. ¡Seguinos en redes!</p>
       </article>`;
   }
-  const partes = [`📅 ${fechaLarga(p.fecha)}`];
-  if (p.hora) partes.push(`🕖 ${esc(p.hora)} hs`);
-  if (p.lugar) partes.push(`📍 ${esc(p.lugar)}`);
+  const partes = [fechaLarga(p.fecha)];
+  if (p.hora) partes.push(`${esc(p.hora)} hs`);
+  if (p.lugar) partes.push(esc(p.lugar));
   return `
     <article class="partido-card">
       <span class="etiqueta">Próximo partido</span>
@@ -91,7 +91,7 @@ function slideUltimo(p, porId) {
         <span class="sp-eq">${esc(p.rival)}</span>
       </div>
       <p class="slide-meta">${fechaLarga(p.fecha)} · ${esc(p.torneo)}</p>
-      ${f ? `<p class="sp-figura"><img src="${esc(f.foto)}" alt="" onerror="this.remove()"> ⭐ Figura: <b>${esc(f.nombre)}</b></p>` : ''}
+      ${f ? `<p class="sp-figura"><img src="${esc(f.foto)}" alt="" onerror="this.remove()"> Figura: <b>${esc(f.nombre)}</b></p>` : ''}
       <a class="boton" href="${p.noticia ? 'noticia.html?id=' + encodeURIComponent(p.noticia) : 'partidos.html'}">
         ${p.noticia ? 'Leer la crónica' : 'Ver todos los partidos'}</a>
     </article>`;
@@ -103,7 +103,7 @@ function slideProximo(p) {
   const esHoy = parsearFecha(p.fecha).getTime() === hoy.getTime();
   const partes = [fechaLarga(p.fecha)];
   if (p.hora) partes.push(`${esc(p.hora)} hs`);
-  if (p.lugar) partes.push(`📍 ${esc(p.lugar)}`);
+  if (p.lugar) partes.push(esc(p.lugar));
   return `
     <article class="slide slide-partido prox">
       <span class="slide-etq">${esHoy ? '¡Hoy juega Combinado!' : 'Próximo partido'}</span>

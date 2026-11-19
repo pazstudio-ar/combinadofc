@@ -76,7 +76,7 @@ function abrirFicha(id) {
         <img src="${esc(j.foto)}" alt="${esc(j.nombre)}" onerror="this.src='img/logo/escudo.png'">
       </div>
       <div class="ficha-datos">
-        <button class="ficha-cerrar" id="ficha-cerrar" aria-label="Cerrar">✕</button>
+        <button class="ficha-cerrar" id="ficha-cerrar" aria-label="Cerrar">${icono('cerrar', 18)}</button>
         ${tieneNum ? `<div class="ficha-num">#${esc(j.numero)}</div>` : ''}
         <h2>${esc(j.nombre)}</h2>
         <p class="ficha-pos">${esc(textoPosiciones(j))}</p>

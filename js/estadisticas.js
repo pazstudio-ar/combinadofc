@@ -16,9 +16,9 @@ const COLUMNAS = [
   ['a', 'A', 'Asistencias'],
   ['ga', 'G+A', 'Goles + asistencias'],
   ['prom', 'Prom', 'Goles por partido'],
-  ['fig', '⭐', 'Figura del partido'],
-  ['am', '🟨', 'Tarjetas amarillas'],
-  ['ro', '🟥', 'Tarjetas rojas']
+  ['fig', 'Fig', 'Figura del partido'],
+  ['am', 'TA', 'Tarjetas amarillas'],
+  ['ro', 'TR', 'Tarjetas rojas']
 ];
 
 function listarTorneos(partidos) {
@@ -129,7 +129,7 @@ function dibujar() {
     tarjetaLider(filas, 'g', 'Goleador', 'goles') +
     tarjetaLider(filas, 'a', 'Asistidor', 'asist.') +
     tarjetaLider(filas, 'pj', 'Más partidos', 'PJ') +
-    tarjetaLider(filas, 'fig', 'Más veces figura', '⭐');
+    tarjetaLider(filas, 'fig', 'Más veces figura', 'veces');
 
   dibujarTabla(filas);
   dibujarArqueros(filas);
