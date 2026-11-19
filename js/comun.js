@@ -63,7 +63,6 @@ const PAGINAS = [
   { id: 'partidos', texto: 'Partidos', url: 'partidos.html' },
   { id: 'estadisticas', texto: 'Estadísticas', url: 'estadisticas.html' },
   { id: 'noticias', texto: 'Noticias', url: 'noticias.html' },
-  { id: 'galeria',  texto: 'Galería',  url: 'galeria.html' },
   { id: 'tienda',   texto: 'Tienda',   url: 'tienda.html' },
   { id: 'contacto', texto: 'Contacto', url: 'contacto.html' }
 ];

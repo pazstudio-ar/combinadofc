@@ -1,9 +1,0 @@
-
-[
-  { "imagen": "img/galeria/1.png", "descripcion": "Festejo ante Los de siempre", "album": "Copa Chamigo 2026", "portada": true },
-  { "imagen": "img/galeria/2.png", "descripcion": "Equipo antes del partido",    "album": "Copa Chamigo 2026" },
-  { "imagen": "img/galeria/1.png", "descripcion": "Foto del plantel", "album": "Plantel" },
-  { "imagen": "img/galeria/2.png", "descripcion": "Foto del plantel", "album": "Plantel" },
-  { "imagen": "img/galeria/3.png", "descripcion": "Foto del plantel", "album": "Plantel" },
-  { "imagen": "img/galeria/4.png", "descripcion": "Foto del plantel", "album": "Plantel" }
-]
