@@ -40,11 +40,13 @@ function tarjetaProducto(p) {
       <div class="producto-info">
         <small class="p-cat">${esc(p.categoria || '')}</small>
         <h3>${esc(p.nombre)}</h3>
-        ${p.detalle ? `<p class="detalle">${esc(p.detalle)}</p>` : ''}
+        <p class="detalle">${esc(p.detalle || '')}</p>
         <p class="precio">${antes ? `<s>${precio(antes)}</s>` : ''}${precio(p.precio)}${off ? `<span class="off">${off}% OFF</span>` : ''}</p>
-        ${talles ? `<div class="talles" role="group" aria-label="Talles">${talles}</div>` : ''}
-        <button class="boton agregar" ${agotado ? 'disabled' : ''}>${agotado ? 'Agotado' : 'Agregar al pedido'}</button>
-        <small class="aviso" aria-live="polite"></small>
+        <div class="p-accion">
+          ${talles ? `<div class="talles" role="group" aria-label="Talles">${talles}</div>` : ''}
+          <button class="boton agregar" ${agotado ? 'disabled' : ''}>${agotado ? 'Agotado' : 'Agregar al pedido'}</button>
+          <small class="aviso" aria-live="polite"></small>
+        </div>
       </div>
     </article>`;
 }

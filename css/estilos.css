@@ -975,3 +975,10 @@ body[data-pagina="tienda"] .carrito-flotante .cant { border-radius: 0; backgroun
 .lt-buscar { min-width: 0; }
 @media (max-width: 760px) { .lt-der { box-sizing: border-box; } .lt-der select { width: auto; } .lt-herr { min-width: 0; } }
 @media (max-width: 760px) { .lt-herr { display: grid; grid-template-columns: minmax(0, 1fr); } .lt-tienda .filtros { max-width: 100%; } }
+
+/* Cartas parejas: el nombre ocupa siempre 2 líneas y los talles + botón quedan abajo */
+.lt-tienda .producto-info h3 { min-height: 2.2em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.lt-tienda .producto-info .detalle { min-height: 1.3em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.p-accion { margin-top: auto; display: flex; flex-direction: column; gap: .35rem; }
+.lt-tienda .producto-info .precio { margin-top: .2rem; }
+@media (max-width: 760px) { .lt-tienda .producto-info h3 { font-size: .98rem; } }
