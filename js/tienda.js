@@ -38,11 +38,10 @@ function tarjetaProducto(p) {
         ${agotado ? '<span class="sello">Agotado</span>' : ''}
       </div>
       <div class="producto-info">
-        ${antes ? `<p class="precio-antes">${precio(antes)}</p>` : ''}
-        <p class="precio">${precio(p.precio)}${off ? `<span class="off">${off}% OFF</span>` : ''}</p>
+        <small class="p-cat">${esc(p.categoria || '')}</small>
         <h3>${esc(p.nombre)}</h3>
         ${p.detalle ? `<p class="detalle">${esc(p.detalle)}</p>` : ''}
-        ${agotado ? '' : '<p class="envio">Pedilo por WhatsApp</p>'}
+        <p class="precio">${antes ? `<s>${precio(antes)}</s>` : ''}${precio(p.precio)}${off ? `<span class="off">${off}% OFF</span>` : ''}</p>
         ${talles ? `<div class="talles" role="group" aria-label="Talles">${talles}</div>` : ''}
         <button class="boton agregar" ${agotado ? 'disabled' : ''}>${agotado ? 'Agotado' : 'Agregar al pedido'}</button>
         <small class="aviso" aria-live="polite"></small>

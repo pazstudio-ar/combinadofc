@@ -25,32 +25,27 @@
   <header class="cabecera" id="cabecera"></header>
 
   <main>
-    <section class="ml-tienda">
+    <section class="lt-tienda">
       <div class="contenedor">
-        <div class="ml-barra">
-          <div class="ml-titulo"><img src="img/logo/escudo.png" alt=""><div><h1>Tienda oficial</h1><small>Combinado FC · pedidos por WhatsApp</small></div></div>
-          <input type="search" id="buscar" class="ml-buscar" placeholder="Buscar camisetas, buzos, camperas…" aria-label="Buscar productos">
-        </div>
-        <div class="ml-layout">
-          <aside class="ml-lateral">
-            <h2>Categorías</h2>
-            <div class="filtros" id="filtros"></div>
-          </aside>
-          <div class="ml-resultados">
-            <div class="ml-cab">
-              <span id="ml-cant"></span>
-              <label>Ordenar por
-                <select id="orden">
-                  <option value="relevantes">Más relevantes</option>
-                  <option value="menor">Menor precio</option>
-                  <option value="mayor">Mayor precio</option>
-                </select>
-              </label>
-            </div>
-            <div class="grid-productos" id="grid-productos"></div>
-            <p class="nota-tienda">Los precios y la disponibilidad se confirman por WhatsApp. El pago y la entrega se coordinan con el club.</p>
+        <header class="lt-cab">
+          <span class="lt-kicker">Tienda oficial</span>
+          <h1>Llevá los colores puestos</h1>
+          <p>Armá tu pedido y mandalo por WhatsApp. Pago y entrega los coordinamos con el club.</p>
+        </header>
+        <div class="lt-herr">
+          <div class="filtros" id="filtros"></div>
+          <div class="lt-der">
+            <input type="search" id="buscar" class="lt-buscar" placeholder="Buscar" aria-label="Buscar productos">
+            <select id="orden" aria-label="Ordenar">
+              <option value="relevantes">Destacados</option>
+              <option value="menor">Menor precio</option>
+              <option value="mayor">Mayor precio</option>
+            </select>
           </div>
         </div>
+        <p class="lt-cant" id="ml-cant"></p>
+        <div class="grid-productos" id="grid-productos"></div>
+        <p class="nota-tienda">Los precios y la disponibilidad se confirman por WhatsApp.</p>
       </div>
     </section>
   </main>
