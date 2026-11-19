@@ -145,7 +145,7 @@ function dibujarCarrito() {
         </div>
         <p class="sub">${precio(l.p.precio * l.cant)}</p>
       </div>
-      <button class="item-quitar" data-accion="quitar" data-i="${i}" aria-label="Quitar del pedido">🗑</button>
+      <button class="item-quitar" data-accion="quitar" data-i="${i}" aria-label="Quitar del pedido">✕</button>
     </div>`).join('');
 
   const link = `https://wa.me/${esc(config.whatsapp)}?text=${encodeURIComponent(mensajeWhatsApp(lineas, total))}`;

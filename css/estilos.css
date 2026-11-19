@@ -982,3 +982,26 @@ body[data-pagina="tienda"] .carrito-flotante .cant { border-radius: 0; backgroun
 .p-accion { margin-top: auto; display: flex; flex-direction: column; gap: .35rem; }
 .lt-tienda .producto-info .precio { margin-top: .2rem; }
 @media (max-width: 760px) { .lt-tienda .producto-info h3 { font-size: .98rem; } }
+
+/* ============ CARRITO — mismo estilo editorial ============ */
+body[data-pagina="tienda"] .carrito-fondo { background: rgba(0,0,0,.78); }
+body[data-pagina="tienda"] .carrito { background: var(--negro); border-left: 1px solid var(--borde); }
+body[data-pagina="tienda"] .carrito-cab { padding: 1.3rem 1.4rem; }
+body[data-pagina="tienda"] .carrito-cab h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: .06em; text-transform: uppercase; }
+body[data-pagina="tienda"] .carrito-cab button { border-radius: 0; background: transparent; }
+body[data-pagina="tienda"] .item-carrito { grid-template-columns: 72px 1fr auto; padding: 1rem 0; }
+body[data-pagina="tienda"] .item-carrito img { width: 72px; height: 72px; border-radius: 0; object-fit: cover; }
+body[data-pagina="tienda"] .item-carrito h4 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .02em; text-transform: uppercase; line-height: 1.15; }
+body[data-pagina="tienda"] .item-carrito small { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; margin-top: .15rem; }
+body[data-pagina="tienda"] .item-carrito .sub { color: var(--amarillo); font-family: 'Oswald', sans-serif; font-size: 1.05rem; letter-spacing: .02em; }
+body[data-pagina="tienda"] .cantidad { gap: 0; margin-top: .5rem; border: 1px solid var(--borde); width: max-content; }
+body[data-pagina="tienda"] .cantidad button { width: 28px; height: 28px; border: 0; border-radius: 0; background: transparent; }
+body[data-pagina="tienda"] .cantidad button:hover { background: var(--gris-claro); color: var(--texto); }
+body[data-pagina="tienda"] .cantidad b { min-width: 28px; text-align: center; font-size: .9rem; }
+body[data-pagina="tienda"] .item-quitar { align-self: start; font-size: .9rem; padding: .2rem; }
+body[data-pagina="tienda"] .carrito-vacio { color: var(--texto-suave); text-align: center; margin-top: 3rem; letter-spacing: .05em; }
+body[data-pagina="tienda"] .carrito-pie { border-top: 1px solid var(--borde); padding: 1.2rem 1.4rem 1.4rem; }
+body[data-pagina="tienda"] .total b { font-family: 'Oswald', sans-serif; color: var(--amarillo); }
+body[data-pagina="tienda"] .carrito-pie .boton { display: block; text-align: center; border-radius: 0; background: var(--texto); color: var(--negro); letter-spacing: .2em; font-size: .78rem; padding: .95rem; }
+body[data-pagina="tienda"] .carrito-pie .boton:hover { background: var(--verde); transform: none; }
+body[data-pagina="tienda"] .carrito-pie .boton, body[data-pagina="tienda"] .pd-info .boton { border-color: var(--texto); } body[data-pagina="tienda"] .carrito-pie .boton:hover, body[data-pagina="tienda"] .pd-info .boton:hover:not(:disabled) { border-color: var(--verde); }
