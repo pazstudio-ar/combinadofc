@@ -1,7 +1,7 @@
 /* ===== PAPELITOS (verdes y dorados) en la portada =====
    Canvas liviano: pocas piezas, se pausa fuera de pantalla y respeta "reducir movimiento". */
 (function () {
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.hero, .banner');
   if (!hero) return;
 
   const canvas = document.createElement('canvas');

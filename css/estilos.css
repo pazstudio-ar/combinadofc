@@ -1024,3 +1024,8 @@ input, select, textarea { border-radius: 0; }
 .hero { position: relative; overflow: hidden; }
 .hero .contenedor { position: relative; z-index: 1; }
 .papelitos { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+/* Papelitos también en las cabeceras de las demás secciones */
+.banner { position: relative; overflow: hidden; }
+.banner .contenedor { position: relative; z-index: 1; }
+.lt-tienda { padding-top: 2.5rem; }
